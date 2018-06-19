@@ -1,0 +1,723 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+@import "about"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+textarea
+	resize: none !important
+
+body
+	font-family: Roboto, sans-serif !important
+	font-size: 18px
+	font-weight: 300
+	min-width: 320px
+	position: relative
+	line-height: 1.4
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	input, textarea
+		border: #fff 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+.text-center
+	text-align: center
+
+b, strong
+	font-weight: bold
+h1
+	font-family: Roboto, sans-serif
+	font-size: 48px
+	font-weight: 500
+	color: $accent
+	line-height: 1.2
+	text-align: center
+h2
+	font-family: Roboto, sans-serif
+	font-size: 22px
+	font-weight: 300
+	color: $accent
+	line-height: 1.2
+
+hr
+	height: 2px
+	width: 100%
+	background-color: $accent
+	border: none
+
+.news-link
+	font-family: Roboto, sans-serif
+	font-size: 22px
+	font-weight: 300
+	color: $accent
+	line-height: 1.2
+	text-decoration: none
+	&:hover
+		text-decoration: none
+		color: $accent
+
+// modal styles
+.modal-dialog
+	height: 100%
+	display: flex
+	align-items: center
+.close-row
+	margin: 30px 0 0 0
+
+.close-modal
+	border: none
+	background-color: transparent
+	cursor: pointer
+	.ico-close
+		display: block
+		height: 2px
+		width: 30px
+		background-color: #ffffff
+		transform: rotate(45deg)
+		&:before
+			display: block
+			background-color: #ffffff
+			height: 2px
+			width: 30px
+			content: ''
+			transform: rotate(90deg)
+
+.modal-content
+	background-color: $accent !important
+
+.modal-title
+	text-align: center
+	font-family: Roboto, sans-serif
+	font-weight: 500
+	font-size: 36px
+	color: #ffffff
+	padding-bottom: 20px
+
+.modal-label
+	font-family: Roboto, sans-serif
+	font-size: 16px
+	font-weight: 300
+
+.modal-input
+	height: 40px
+	color: $text !important
+
+.modal-textarea
+	color: $text !important
+
+.file-load
+	border: none !important
+	padding: 10px 0
+	color: #ffffff !important
+	font-size: 16px
+
+.btn-modal-form
+	width: 100%
+	height: 100px
+	position: relative
+	.btn-modal-send
+		width: 100%
+		height: 60px
+		background-color: $darkAccent
+		border: 1px solid #ffffff
+		cursor: pointer
+		font-family: Roboto, sans-serif
+		font-size: 20px
+		font-weight: 300
+		color: #ffffff
+		margin-bottom: 30px
+		position: absolute
+		z-index: 1		
+		&::before
+			content: " "			
+			display: block
+			width: 100%
+			height: 100%
+			position: absolute
+			z-index: -1
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+			background: red
+			transform: scaleY(0)
+			transform-origin: 50%
+			transition-property: transform
+			transition-duration: 0.3s
+			transition-timing-function: ease-out
+		&:hover
+			text-decoration: none
+			color: #fff
+			&::before
+				transform: scaleY(1)
+
+
+
+
+// SVG styles
+
+.st0
+	fill-rule: evenodd
+	clip-rule: evenodd
+	fill: #676767
+	stroke: #676767
+	stroke-width: 0.216
+	stroke-miterlimit: 22.9256
+.st1
+	fill-rule: evenodd
+	clip-rule: evenodd
+	fill: #676767
+
+.st2
+	fill-rule: evenodd
+	clip-rule: evenodd
+	fill: #6BC7E4
+.st3
+	fill-rule: evenodd
+	clip-rule: evenodd
+	fill: #00B4EC
+.st4
+	fill-rule: evenodd
+	clip-rule: evenodd
+	fill: #DC2A1B
+.st5
+	fill-rule: evenodd
+	clip-rule: evenodd
+	fill: #F0F0F0
+.st6
+	fill: #009FE3
+.st7
+	fill: #DADADA
+	transition: fill 0.3s ease
+.st8
+	fill: #00B4EC
+.st9
+	fill: #FFFFFF
+
+// Main Page Header content 
+
+//navigation section
+.phone-main-wrapper
+	display: flex
+	flex-direction: column
+	justify-content: center
+	align-items: center
+	width: 100%
+	height: 100%
+	background-color: $accent
+.main-page-header-phone
+	text-decoration: none
+	font-family: Roboto, sans-serif
+	font-size: 21px
+	font-weight: 300
+	color: #fff
+	line-height: 1.5	
+	transition: 0.3s ease
+	&:hover
+		text-decoration: none
+		color: #fff
+.mobile-nav
+	display: none
+	position: absolute
+	z-index: 50
+	background-color: $accent
+	height: 100vh
+	width: 40%
+	top: 64px
+	right: 0
+	.mob-navigation
+		list-style-type: none
+		font-family: Roboto, sans-serif
+		font-size: 24px
+		font-weight: 300
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		margin: 0
+		padding: 0
+		margin-top: 30%
+		li
+			margin: 20px 0
+
+.mob-link
+	color: #ffffff
+	&:hover
+		text-decoration: none
+		color: #ffffff
+		font-weight: 500
+
+	
+.burger
+	display: none
+	width: 44px
+	height: 30px	
+	position: relative
+	cursor: pointer
+	.burger-item
+		position: absolute
+		width: 100%
+		height: 2px
+		background-color: $accent
+		transition: 0.5s ease
+		&.top
+			top: 0
+			&.activeT
+				top: 15px
+				transform: rotate(225deg)
+		&.middle
+			top: 14px
+			&.noactive
+				width: 0
+		&.bottom
+			bottom: 0
+			&.activeB
+				bottom: 13px
+				transform: rotate(-225deg)	
+.nav-line
+	width: 100%
+	height: 2px
+	background-color: $accent
+
+.navigation
+	margin: 0	
+	height: 100px
+	li
+		display: inline-block
+		height: 100%
+		list-style-type: none
+		margin-left: 20px
+		a
+			display: flex
+			justify-content: center
+			align-items: center
+			height: 100%
+			text-decoration: none
+			font-family: Roboto, sans-serif
+			font-size: 18px
+			font-weight: 300
+			color: $accent
+			margin: 0
+			padding: 0 4px
+			border-bottom: 4px solid rgba(0,180,236,0)
+			transition: 0.3s ease
+			&:hover
+				font-weight: 500
+				border-bottom: 4px solid rgba(0,180,236,1)
+
+//Header content
+	
+.header-cont
+	height: 600px
+	background-image: url(../img/banner.png)
+	background-position: bottom center
+	background-repeat: no-repeat
+	background-size: contain
+	overflow: hidden
+	.logo
+		width: 50%
+		height: auto
+		margin-top: 50px
+		margin-bottom: 20px
+	.slogan
+		width: 45%
+		h1
+			text-align: left
+			font-weight: 400 
+
+//Catalog
+
+.catalog-h-border
+	width: 100%
+	height: 2px
+	background-color: $borderColor
+.catalog-section
+	display: flex
+	flex-direction: column
+	justify-content: center
+	align-items: center
+	cursor: pointer
+	border-left: 2px solid $borderColor
+	&.catalog-section:nth-child(2)
+		border-right: 2px solid $borderColor
+	&:hover
+		.st6
+			fill: #fff
+		.st7
+			fill: $accent
+		.catalog-ico
+			background-color: $accent
+
+.catalog-ico
+	display: flex
+	justify-content: center
+	align-items: center
+	width: 220px
+	height: 220px
+	background-color: #f0f0f0
+	border-radius: 100%
+	margin-top: 80px
+	margin-bottom: 30px
+	transition: 0.3s ease
+	svg
+		width: 50%
+		height: 50%
+.catalog-name
+	height: 120px
+	a
+		display: block
+		position: relative
+		height: 100%
+		text-align: center
+		text-decoration: none
+		font-family: Roboto, sans-serif
+		font-size: 23px
+		font-weight: 300
+		color: $accent
+		line-height: 1.2
+		&:hover
+			color: $accent
+		.catalog-arrow
+			display: inline-block
+			position: absolute
+			bottom: 0
+			transform: translateX(-40px)
+			transform-origin: 50 50
+			margin-bottom: 20px
+			width: 80px
+			height: 30px
+			
+				
+// Price section styles
+
+.price
+	width: 100%
+	height: 160px
+	background-color: $accent
+	.row
+		height: 100%
+		.col-12
+			height: 100%
+
+.price-button
+	width: 386px
+	height: 70px
+	position: relative	
+	background-color: #009fe3
+	.price-link		
+		display: flex
+		justify-content: center
+		align-items: center
+		width: 100%
+		height: 100%
+		font-family: Roboto, sans-serif
+		font-size: 25px
+		font-weight: 300
+		color: #fff
+		text-align: center
+		line-height: 1		
+		border: 1px solid #fff		
+		position: absolute
+		z-index: 1
+		&::before
+			content: " "			
+			display: block
+			width: 100%
+			height: 100%
+			position: absolute
+			z-index: -1
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+			background: red
+			transform: scaleY(0)
+			transform-origin: 50%
+			transition-property: transform
+			transition-duration: 0.3s
+			transition-timing-function: ease-out
+		&:hover
+			text-decoration: none
+			color: #fff
+			&::before
+				transform: scaleY(1)
+
+
+// NEWS section style
+
+.news
+	text-align: center
+	margin: 80px 0 55px 0
+	h1
+		font-weight: 500
+.news-block
+	display: flex
+	flex-direction: column
+	
+	
+.news-date
+	height: 30px
+	display: flex
+	justify-content: flex-start
+	align-items: center
+	margin-top: 6px
+	.date-ico
+		display: inline-block
+		width: 26px
+		height: 100%
+		margin-right: 10px
+	.date
+		display: inline-block
+		line-height: 1
+		color: $date
+		font-family: Roboto, sans-serif
+		font-size: 16px
+		font-weight: 300
+.news-discription
+	text-align: left
+	margin: 20px 0 0 0
+	font-family: Roboto, sans-serif
+	font-size: 18px
+	font-weight: 300
+	line-height: 1.4
+	min-height: 200px
+
+
+// Comments section styles
+
+.bg-comment
+	background-image: url(../img/parallax.jpg)
+	background-position: center center
+	background-repeat: no-repeat
+	background-size: cover
+	margin-top: 100px
+	padding-bottom: 40px
+	background-attachment: fixed
+
+.comment-caption
+	margin: 60px 0 40px 0
+	h1
+		color: #ffffff
+
+.form-input-block
+	display: flex
+	flex-direction: column
+
+label
+	font-family: Roboto, sans-serif
+	font-size: 18px
+	font-weight: 300
+	color: #ffffff
+
+input
+	width: 100%
+	height: 50px
+	font-family: Roboto, sans-serif
+	font-size: 20px
+	color: #090909
+	padding: 0 10px
+
+.textarea-block
+	margin-top: 40px	
+textarea
+	height: 120px
+	font-family: Roboto, sans-serif
+	font-size: 20px
+	color: #090909
+	padding: 0 10px
+.send-row
+	margin-top: 60px
+	.btn-send
+		width: 386px
+		height: 70px
+		position: relative		
+		#send		
+			display: flex
+			justify-content: center
+			align-items: center
+			width: 100%
+			height: 100%
+			cursor: pointer
+			font-family: Roboto, sans-serif
+			font-size: 25px
+			font-weight: 300
+			color: #fff
+			text-align: center
+			line-height: 1	
+			background-color: #009fe3	
+			border: 1px solid #fff		
+			position: absolute
+			z-index: 1
+			&::before
+				content: " "			
+				display: block
+				width: 100%
+				height: 100%
+				position: absolute
+				z-index: -1
+				top: 0
+				bottom: 0
+				left: 0
+				right: 0
+				background: red
+				transform: scaleY(0)
+				transform-origin: 50%
+				transition-property: transform
+				transition-duration: 0.3s
+				transition-timing-function: ease-out
+			&:hover
+				text-decoration: none
+				color: #fff
+				&::before
+					transform: scaleY(1)
+
+
+
+
+// gallery
+
+.gallery-container
+	margin-top: 80px
+	margin-bottom: 80px
+
+.gallery-img, .big
+	overflow: hidden
+	width: 100%
+	height: 100%
+	cursor: pointer
+	img
+		transition: 0.3s ease
+		&:hover
+			transform: scale(1.1) translateX(18px)
+
+.big
+	height: 495px
+.gallery-row
+	margin-top: 15px
+
+//footer
+.footer-bg	
+	background: linear-gradient(90deg, rgba(0,180,236,1) 0%, rgba(0,180,236,1) 48%, rgba(240,240,240,1) 49%, rgba(240,240,240,1) 100%)
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b4ec', endColorstr='#f0f0f0',GradientType=1 )
+.footer-links-container
+	background-color: #00b4ec
+	padding-top: 60px
+	ul
+		list-style-type: none
+		font-family: Roboto, sans-serif
+		font-size: 18px
+		font-weight: 300
+		line-height: 2.4
+		margin: 0
+		padding: 0 0 40px 0
+		li
+			a
+				text-decoration: none
+				color: #ffffff
+				&:hover
+					font-weight: 500
+.copyright
+	margin-bottom: 20px
+	font-family: Roboto, sans-serif
+	font-size: 16px
+	font-weight: 300
+	color: #ffffff
+
+//footer contacts
+.footer-info-container
+	background-color: #f0f0f0
+.contacts
+	list-style-type: none
+	font-family: Roboto, sans-serif
+	font-size: 18px
+	font-weight: 300
+	color: #3c3c3c
+	padding: 0
+	padding-top: 40px
+	li
+		display: flex
+		justify-content: flex-start
+		align-items: flex-start
+		margin-top: 20px
+		img
+			width: 32px
+			height: 32px
+		p
+			margin-left: 20px
+
+.social
+	text-align: center
+	font-family: Roboto, sans-serif
+	font-size: 18px
+	font-weight: 300
+	color: #3c3c3c
+	padding-top: 60px
+.social-icons
+	display: flex
+	justify-content: center
+	flex-wrap: wrap
+	div
+		width: 100%
+		.soc-ico
+			width: 44px
+			height: 44px
+			margin: 20px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import "media" // Always at the end

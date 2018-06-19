@@ -1,0 +1,141 @@
+@import "vars"
+
+
+/*==========  Desktop First  ==========*/
+
+// ≥1200px
++media-breakpoint-down(lg)
+    
+    .navigation
+        li
+            margin-left: 0
+// ≥992px
++media-breakpoint-down(md)
+    .navigation
+        display: none
+    .burger
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: space-between
+    .phone-main-wrapper
+        background-color: #ffffff
+        .main-page-header-phone
+            color: $text
+// ≥768px
++media-breakpoint-down(sm)
+    .mobile-nav
+        width: 100%
+    .catalog-name
+        a
+            font-size: 20px
+    .news
+        margin-bottom: 0
+    .news-block
+        margin-top: 60px
+    .news-discription
+        min-height: 130px
+    .gallery-img, .big
+        margin-top: 15px
+        img
+            &:hover
+                transform: none
+    .gallery-row
+	    margin-top: 0
+    .gallery-container
+        margin-top: 15px
+        margin-bottom: 15px
+    .footer-links-container
+        order: 3
+    .footer-info-container
+        order: 1
+
+
+// ≥576px
++media-breakpoint-down(xs)
+    .phone-main-wrapper
+        height: 60px
+        background-color: $accent
+        .main-page-header-phone
+            font-size: 16px
+            color: #ffffff
+    nav
+        background-color: $accent
+    .burger
+        position: relative
+        z-index: 50
+        .burger-item
+            background-color: #fff
+    .phone-main-wrapper
+        position: relative
+        z-index: 50
+        align-items: flex-start
+    .mobile-nav
+        top: 0
+        height: 100vh
+    .header-cont
+        height: 450px
+        background-size: 170%
+        .logo
+            margin-top: 50px
+            width: 100% 
+        .slogan
+            margin-top: 30px
+            width: 100%
+            h1
+                text-align: center
+                font-size: 24px
+    .catalog-h-border
+        display: none
+    .catalog-section
+        border-top: 2px solid $borderColor
+        border-left: none
+        &.catalog-section:nth-child(2)
+            border-right: none
+    .price-button
+        width: 300px
+    .contacts
+        padding-top: 20px
+    .social
+        padding-top: 20px
+        padding-bottom: 20px    
+    .footer-links-container
+        padding-top: 30px
+        padding-left: 40px
+ 
+
+
+    .mobile-nav
+        top: 62px
+        .mob-navigation
+            margin-top: 15%
+
+    .second-page-nav
+        background-color: #ffffff !important
+        height: 60px
+
+    .burger
+        &.second
+            top: 8px
+            .burger-item
+                background-color: $accent
+    .logo-in-nav
+        top: 0
+    .phone-second-wrapper
+        display: none !important
+
+    
+    
+/*==========  Mobile First  ==========*/
+
+// ≤576px
++media-breakpoint-up(sm)
+
+// ≤768px
++media-breakpoint-up(md)
+
+// ≤992px
++media-breakpoint-up(lg)
+
+// ≤1200px
++media-breakpoint-up(xl)
