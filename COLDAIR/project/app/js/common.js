@@ -145,3 +145,58 @@ function showArray() {
     wrapper.innerHTML += array[currentIndex] + "<br />";
   };
 }
+
+
+// google Maps -----------------------------------------------------------
+
+function initMap() {
+    // Styles a map in night mode.
+    var map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: 47.219993 , lng: 39.709282 },
+        zoom: 17,
+        scrollwheel: false,
+        mapTypeControl: false,
+        streetViewControl: false,
+        zoomControl: true,
+       
+    });
+    setMarkers(map);
+}
+    var offices = [
+        ['komarova', 47.286823, 39.703821, 3],
+        ['dovatora', 47.243000, 39.643042, 2],
+        ['sadovaya', 47.219993, 39.709282, 1]
+      ];
+
+function setMarkers(map) {
+        var myMark = {
+            url: "img/svg/icons/map2.svg",
+            scaledSize: new google.maps.Size(40, 80) 
+        };
+        
+        for(var i = 0; i< offices.length; i++) {
+            var office = offices[i];
+            var marker = new google.maps.Marker({
+                position: {lat: office[1], lng: office[2]},
+                map: map,
+                icon: myMark
+              });
+        }
+    
+};
+
+/*
+var myMark = {
+    url: "img/svg/icons/map.svg",
+    scaledSize: new google.maps.Size(40, 80) 
+};
+
+var marker = new google.maps.Marker({
+position: { lat: 47.229389, lng: 39.753851 },
+map: map,
+icon: myMark,
+
+animation: google.maps.Animation.DROP
+});
+
+*/
