@@ -21,7 +21,7 @@
 <body>
 
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="main-page-modal" tabindex="-1" role="dialog" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content border-0 rounded-0">
 			<div class="container">
@@ -39,26 +39,26 @@
 					<form id="modal-form" class="col-10">
 						<div class="form-group">
 							<label class="modal-label" for="modal-fio">ФИО</label>
-							<input id="modal-fio" class="form-control border-0 rounded-0 modal-input" type="text" form="modal-form" required>
+							<input id="modal-fio" name="fio" class="form-control border-0 rounded-0 modal-input" type="text" form="modal-form" required>
 						</div>
 						<div class="form-group">
 							<label class="modal-label" for="modal-phone" >Телефон</label>
-							<input id="modal-phone" class="form-control border-0 rounded-0 modal-input" type="tel" form="modal-form" pattern="[0-9]{5,25}" required>
+							<input id="modal-phone" name="phone" class="form-control border-0 rounded-0 modal-input" type="tel" form="modal-form" pattern="[0-9]{5,25}" required>
 						</div>
 						<div class="form-group">
 							<label class="modal-label" for="modal-email">Email</label>
-							<input id="modal-email" class="form-control border-0 rounded-0 modal-input" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" form="modal-form" required>
+							<input id="modal-email" name="email" class="form-control border-0 rounded-0 modal-input" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" form="modal-form" required>
 						</div>
 						<div class="form-group">
 							<label class="modal-label" for="modal-comment">Комментарий</label>
-							<textarea class="form-control modal-textarea border-0 rounded-0" id="modal-comment" rows="3" form="modal-form" required></textarea>
+							<textarea name="comment" class="form-control modal-textarea border-0 rounded-0" id="modal-comment" rows="3" form="modal-form" required></textarea>
 						</div>
 						<div class="form-group">
-							<input class="file-load" type="file" id="exampleInputFile">
+							<input name="file" class="file-load" type="file" id="exampleInputFile">
 						</div>
 						<div class="form-group d-flex justify-content-center">
-							<div class="btn-modal-form">
-								<button type="submit" class="btn-modal-send" form="modal-form">Отправить</button>
+							<div class="btn w-100">
+								<button type="submit" form="modal-form">Отправить</button>
 							</div>
 						</div>
 					</form>
@@ -543,39 +543,42 @@
 			</div>
 			<div class="row send-row">
 				<div class="col-12 d-flex justify-content-center align-items-center">
-					<div class="btn-send">
+					<div class="btn">
 						<button type="submit" id="send">Отправить</button>
-				</div>
+					</div>
 				</div>
 			</div>
 		</form>
 	</div>
 	</section>
-	<section class="container-fluid gallery-container">
+	<section class="container-fluid mainpage-gallery-container">
 		<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-12 gallery">
 				<div class="row">
-					<div class="col-md-6 col-12 gallery-img"><img src="img/gallery/g-1.jpg" alt=""></div>
-					<div class="col-md-6 col-12 gallery-img"><img src="img/gallery/g-2.jpg" alt=""></div>
+					<div class="col-md-6 col-12 mainpage-gallery-img"><img src="img/gallery/g-1.jpg" alt=""></div>
+					<div class="col-md-6 col-12 mainpage-gallery-img"><img src="img/gallery/g-2.jpg" alt=""></div>
 				</div>
 
-				<div class="row gallery-row">
-						<div class="col-md-6 col-12 gallery-img"><img src="img/gallery/g-4.jpg" alt=""></div>
-						<div class="col-md-6 col-12 gallery-img"><img src="img/gallery/g-3.jpg" alt=""></div>
+				<div class="row mainpage-gallery-row">
+						<div class="col-md-6 col-12 mainpage-gallery-img"><img src="img/gallery/g-4.jpg" alt=""></div>
+						<div class="col-md-6 col-12 mainpage-gallery-img"><img src="img/gallery/g-3.jpg" alt=""></div>
 				</div>			
 				
 			</div>
 			<div class="col-md-4 col-12">
 				<div class="row">
 					<div class="col-12">
-						<div class="gallery-img big"><img src="img/gallery/g-5.jpg" alt=""></div>
+						<div class="mainpage-gallery-img big"><img src="img/gallery/g-5.jpg" alt=""></div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	</section>
+	
+	
+
 	<footer class="container-fluid">
 		<div class="row footer-bg">
 		<div class="container">

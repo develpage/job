@@ -15,43 +15,73 @@
 	<meta name="theme-color" content="#000">
 	<!-- Custom Browsers Color End -->
 	<link rel="stylesheet" href="css/main.min.css">
-
+	
 </head>
 
 <body>
-		<div class="mobile-nav">
-				<ul class="mob-navigation">
-						<li>
-							<a href="about.html" class="mob-link">О компании</a>
-						</li>
-						<li>
-							<a href="news.html" class="mob-link">Новости</a>
-						</li>
-						<li>
-							<a href="questions.html" class="mob-link">Вопросы и ответы</a>
-						</li>
-						<li>
-							<a href="gallery.html" class="mob-link">Фотогалерея</a>
-						</li>
-						<li>
-							<a href="contacts.html" class="mob-link">Контакты</a>
-						</li>
-					</ul>
+
+
+
+
+		<div class="gallery-modal-wrapper">
+			
+				<div class="gallery-modal">
+					<div class="modal-img-wrapper">
+						<img class="modal-img img-responsive" src="img/gallery/g-1.jpg" alt="">
+					</div>
+					<div class="modal-img-name-block">
+						<p class="modal-img-name"></p>
+					</div>
+					<div class="gallery-navigation">
+						<div class="arrow left"><img src="img/svg/icons/arrow1.svg" alt=""></div>
+						<div class="arrow right"><img src="img/svg/icons/arrow2.svg" alt=""></div>
+					</div>
+				</div>
 		</div>
+
+
+
+
+
+
+
+
+
+	<div class="mobile-nav">
+		<ul class="mob-navigation">
+			<li>
+				<a href="about.html" class="mob-link">О компании</a>
+			</li>
+			<li>
+				<a href="news.html" class="mob-link">Новости</a>
+			</li>
+			<li>
+				<a href="questions.html" class="mob-link">Вопросы и ответы</a>
+			</li>
+			<li>
+				<a href="gallery.html" class="mob-link">Фотогалерея</a>
+			</li>
+			<li>
+				<a href="contacts.html" class="mob-link">Контакты</a>
+			</li>
+		</ul>
+	</div>
 	<nav class="container second-page-nav">
 		<div class="row no-gutters">
 			<div class="col-lg-2 col-md-3 col-sm-3 mt-1 d-flex justify-content-start align-items-center">
-				<a href="index.html" class="logo-in-nav"><img src="img/svg/logo.svg" alt=""></a>
+				<a href="index.html" class="logo-in-nav">
+					<img src="img/svg/logo.svg" alt="">
+				</a>
 			</div>
 			<div class="col-lg-2 col-md-3 col-sm-5">
 				<div class="phone-second-wrapper d-flex flex-column justify-content-center align-items-end">
-				
-						<a class="second-page-header-phone" onclick="javascript:window.open('tel:+7-863-201-28-91', 'tel'); event.preventDefault()"
-						 href="tel:+7-928-214-40-81">8 (928) 214-40-81</a>
-						
-						<a class="second-page-header-phone" onclick="javascript:window.open('tel:+7-863-201-28-91', 'tel'); event.preventDefault()"
-						 href="tel:+7-928-757-62-02">8 (928) 757-62-02</a>
-					
+
+					<a class="second-page-header-phone" onclick="javascript:window.open('tel:+7-863-201-28-91', 'tel'); event.preventDefault()"
+					    href="tel:+7-928-214-40-81">8 (928) 214-40-81</a>
+
+					<a class="second-page-header-phone" onclick="javascript:window.open('tel:+7-863-201-28-91', 'tel'); event.preventDefault()"
+					    href="tel:+7-928-757-62-02">8 (928) 757-62-02</a>
+
 				</div>
 			</div>
 			<div class="col-lg-8 col-md-6 col-sm-4 d-flex flex-column justify-content-center align-items-end">
@@ -94,10 +124,26 @@
 			</div>
 		</div>
 	</div>
+
+	<section class="container">
+		<div class="row mb-5 pb-5">
+			<div class="col-md-4 col-sm-12 mt-5 img-gallery-block">
+				<img src="img/gallery/g-1.jpg" alt="Оценить значение системы обучения кадров, соответствует насущным потребностям." class="img-responsive gallery-img mb-4">
+				<h2>Оценить значение системы обучения кадров, соответствует насущным потребностям.</h2>
+			</div>
+			<div class="col-md-4 col-sm-12 mt-5 img-gallery-block">
+				<img src="img/gallery/g-2.jpg" alt="Соответствует насущным потребностям, оценить значение системы обучения кадр" class="img-responsive gallery-img mb-4">
+				<h2>Соответствует насущным потребностям, оценить значение системы обучения кадров, </h2>
+			</div>
+			<div class="col-md-4 col-sm-12 mt-5 img-gallery-block">
+				<img src="img/gallery/g-3.jpg" alt="Значения значение системы обучения кадров, соответствует насущным потребностям." class="img-responsive gallery-img mb-4">
+				<h2>Оценить значение системы обучения кадров, соответствует насущным потребностям.</h2>
+			</div>	
+		</div>
+	</section>
+
+
 	
-
-
-
 
 
 
@@ -172,15 +218,15 @@
 			</div>
 		</div>
 	</footer>
-
-
+	
 
 	<script src="js/scripts.min.js"></script>
 
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-	 crossorigin="anonymous"></script>
+	    crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-	 crossorigin="anonymous"></script>
+	    crossorigin="anonymous"></script>
 </body>
 
 </html>

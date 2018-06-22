@@ -3,7 +3,9 @@
 @import "libs"
 @import "about"
 @import "news"
+@import "newspage"
 @import "questions"
+@import "gallery"
 
 
 ::placeholder
@@ -77,6 +79,51 @@ hr
 		text-decoration: none
 		color: $accent
 
+
+.btn
+	width: 330px
+	height: 100px
+	position: relative
+	button
+		width: 100%
+		height: 60px
+		background-color: $darkAccent
+		border: 1px solid #ffffff
+		cursor: pointer
+		font-family: Roboto, sans-serif
+		font-size: 24px
+		font-weight: 300
+		color: #ffffff
+		margin-bottom: 30px
+		position: absolute
+		z-index: 1	
+		left: 0	
+		&::before
+			content: " "			
+			display: block
+			width: 100%
+			height: 100%
+			position: absolute
+			z-index: -1
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+			background: red
+			transform: scaleY(0)
+			transform-origin: 50%
+			transition-property: transform
+			transition-duration: 0.3s
+			transition-timing-function: ease-out
+		&:hover
+			text-decoration: none
+			color: #fff
+			&::before
+				transform: scaleY(1)
+
+
+
+				
 // modal styles
 .modal-dialog
 	height: 100%
@@ -601,11 +648,11 @@ textarea
 
 // gallery
 
-.gallery-container
+.mainpage-gallery-container
 	margin-top: 80px
 	margin-bottom: 80px
 
-.gallery-img, .big
+.mainpage-gallery-img, .big
 	overflow: hidden
 	width: 100%
 	height: 100%
@@ -617,7 +664,7 @@ textarea
 
 .big
 	height: 495px
-.gallery-row
+.mainpage-gallery-row
 	margin-top: 15px
 
 //footer
