@@ -75,54 +75,62 @@ $(document).ready(function () {
 //Gallery - modal window show / hide ***********
 
 window.onload = function () {
-    var modalGallery = document.querySelector('.gallery-modal-wrapper');
+
+    var modalGalleryWrapper = document.querySelector('.gallery-modal-wrapper');
     var galleryModal = document.querySelector('.gallery-modal');
     var images = document.querySelectorAll('.gallery-img');
     var rightArrow = document.querySelector('.right');
+    var leftArrow = document.querySelector('.left');
+    var currentIndex;
     //  console.log(images);
     var href = [];
 
     for (var i = 0; i < images.length; i++) {
+        href[i] = images[i].getAttribute("src");
 
         images[i].onclick = function () {
 
-            modalGallery.classList.toggle('modal-show');
+
+            modalGalleryWrapper.classList.toggle('modal-show');
             galleryModal.classList.toggle('gallery-modal-show');
             var clickImgAttr = this.getAttribute('src');
             var clickImgAlt = this.getAttribute('alt');
+
             document.querySelector('.modal-img').setAttribute('src', clickImgAttr);
             document.querySelector('.modal-img-name').innerHTML = clickImgAlt;
 
-            modalGallery.addEventListener('click', removeModal);
+            currentIndex = href.indexOf(clickImgAttr);
+
+            modalGalleryWrapper.addEventListener('click', removeModal);
         }
 
-        href[i] = images[i].getAttribute("src");
+    }
 
-        rightArrow.onclick = function () {
-            
-            for ( var i = 0; i < href.length; i++) {
-                
-                console.log(href[i]);
-                
+    rightArrow.onclick = function () {
+        currentIndex++;
+        var nextImage = href[currentIndex];
+        document.querySelector('.modal-img').setAttribute('src', nextImage);
+
+        console.log(currentIndex);
+
+        /*  document.querySelector('.modal-img-name').innerHTML = clickImgAlt;*/
+        
+    };
+
+function removeModal(e) {
+            if (!e.target.matches('.gallery-modal, .gallery-modal *')) {
+                modalGalleryWrapper.classList.toggle('modal-show');
+                galleryModal.classList.toggle('gallery-modal-show');
+                modalGalleryWrapper.removeEventListener('click', removeModal);
             }
+            
+        };
 
-
-        }
-       
 
 
     };
 
     
-    function removeModal(e) {
-        if (!e.target.matches('.gallery-modal, .gallery-modal *')) {
-            modalGallery.classList.toggle('modal-show');
-            galleryModal.classList.toggle('gallery-modal-show');
-            modalGallery.removeEventListener('click', removeModal);
-        }
-        
-    };
-
 
 
   //  console.log(href);
@@ -131,7 +139,7 @@ window.onload = function () {
 
 
 
-}
+
 
 var wrapper = document.getElementById('wrapper');
 var button = document.getElementById('button');
