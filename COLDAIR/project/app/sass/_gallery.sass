@@ -1,13 +1,13 @@
 .gallery-img
     transition: 0.3s ease
+    cursor: pointer
+    &:hover
+        transform: scale(1.1) translateY(-8px)
+
 
 .img-gallery-block
     overflow: hidden
-    cursor: pointer
-    &:hover
-        .gallery-img
-            transform: scale(1.1) translateY(-8px)
-
+    
 .gallery-modal-wrapper
     position: fixed
     z-index: 1000
@@ -18,13 +18,13 @@
     justify-content: center
     align-items: center
     opacity: 0
-    transition: opacity 0.5s ease
+    
 .modal-show
     display: flex
     opacity: 1
     
 .gallery-modal
-    max-width: 100vw
+    max-width: 60vw
     max-height: 100vh
     position: relative
     background-color: #fff
@@ -33,15 +33,16 @@
     justify-content: center
     align-items: center
     padding: 30px 56px
-    opacity: 0
-    transition: opacity 0.5s ease
-.gallery-modal-show
-    opacity: 1
+
 
 .modal-img-wrapper
+    max-width: 55vw
     height: auto
     margin: 0
-.modal-img
+
+.gallery-img-container
+    max-height: 210px
+    overflow: hidden
 
 .gallery-navigation
     width: 100%
@@ -50,16 +51,21 @@
     display: flex
     justify-content: space-between
     align-items: center
-    .arrow
+    .modal-arrow
         display: inline-block
         width: 25px
         height: auto
         margin: 0 14px
         cursor: pointer
+        position: absolute
         opacity: 0.5
         transition: opacity 0.3s ease
         &:hover
             opacity: 1
+        &.modal-arrow-left
+            left: 0
+        &.modal-arrow-right
+            right: 0
 
 .modal-img-name-block   
     margin-top: 30px

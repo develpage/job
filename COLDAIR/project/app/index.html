@@ -54,7 +54,7 @@
 							<textarea name="comment" class="form-control modal-textarea border-0 rounded-0" id="modal-comment" rows="3" form="modal-form" required></textarea>
 						</div>
 						<div class="form-group">
-							<input name="file" class="file-load" type="file" id="exampleInputFile">
+								<label class="file" title=""><input type="file" onchange="this.parentNode.setAttribute('title', this.value.replace(/^.*[\\/]/, ''))" /></label>
 						</div>
 						<div class="form-group d-flex justify-content-center">
 							<div class="btn w-100">

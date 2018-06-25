@@ -55,6 +55,10 @@ $(function () {
     });
 });
 
+
+
+
+
 $(document).ready(function () {
     (function () {
         if (window.pluso) if (typeof window.pluso.start == "function") return;
@@ -71,36 +75,38 @@ $(document).ready(function () {
 
 
 
-
 //Gallery - modal window show / hide ***********
+
+$(function(){
+    if($('body').is('.gallery-page')){
 
 window.onload = function () {
 
-    var modalGalleryWrapper = document.querySelector('.gallery-modal-wrapper');
-    var galleryModal = document.querySelector('.gallery-modal');
-    var images = document.querySelectorAll('.gallery-img');
-    var rightArrow = document.querySelector('.right');
-    var leftArrow = document.querySelector('.left');
-    var currentIndex;
-    //  console.log(images);
-    var href = [];
+    var modalGalleryWrapper = document.querySelector('.gallery-modal-wrapper'),
+        galleryModal = document.querySelector('.gallery-modal'),
+        images = document.querySelectorAll('.gallery-img'),
+        rightArrow = document.querySelector('.modal-arrow-right'),
+        leftArrow = document.querySelector('.modal-arrow-left'),
+        currentIndex,
+        nextImage,
+        alt = [],
+        href = [];
 
     for (var i = 0; i < images.length; i++) {
-        href[i] = images[i].getAttribute("src");
+
+        href[i] = images[i].getAttribute('src');
+        alt[i] = images[i].getAttribute('alt');
 
         images[i].onclick = function () {
-
-
+            
             modalGalleryWrapper.classList.toggle('modal-show');
             galleryModal.classList.toggle('gallery-modal-show');
             var clickImgAttr = this.getAttribute('src');
             var clickImgAlt = this.getAttribute('alt');
-
             document.querySelector('.modal-img').setAttribute('src', clickImgAttr);
             document.querySelector('.modal-img-name').innerHTML = clickImgAlt;
-
             currentIndex = href.indexOf(clickImgAttr);
-
+            checkCurrentIndex();
             modalGalleryWrapper.addEventListener('click', removeModal);
         }
 
@@ -108,54 +114,54 @@ window.onload = function () {
 
     rightArrow.onclick = function () {
         currentIndex++;
-        var nextImage = href[currentIndex];
+        nextImage = href[currentIndex];
         document.querySelector('.modal-img').setAttribute('src', nextImage);
+        document.querySelector('.modal-img-name').innerHTML = alt[currentIndex];
 
-        console.log(currentIndex);
-
-        /*  document.querySelector('.modal-img-name').innerHTML = clickImgAlt;*/
-        
+        checkCurrentIndex();
+       
     };
 
-function removeModal(e) {
-            if (!e.target.matches('.gallery-modal, .gallery-modal *')) {
-                modalGalleryWrapper.classList.toggle('modal-show');
-                galleryModal.classList.toggle('gallery-modal-show');
-                modalGalleryWrapper.removeEventListener('click', removeModal);
-            }
-            
-        };
+    leftArrow.onclick = function () {
 
+        currentIndex--;
+        nextImage = href[currentIndex];
+        document.querySelector('.modal-img').setAttribute('src', nextImage);
+        document.querySelector('.modal-img-name').innerHTML = alt[currentIndex];
 
+        checkCurrentIndex();
+       
+    };
+
+    function checkCurrentIndex() {
+        if (currentIndex == href.length - 1) {
+            rightArrow.style.display = 'none';
+        } else if (currentIndex == 0) {
+            leftArrow.style.display = 'none';
+        } else {
+            rightArrow.style.display = 'inline-block';
+            leftArrow.style.display = 'inline-block';
+        }
+    };
+
+    function removeModal(e) {
+        if (!e.target.matches('.gallery-modal, .gallery-modal *')) {
+            modalGalleryWrapper.classList.toggle('modal-show');
+            galleryModal.classList.toggle('gallery-modal-show');
+            modalGalleryWrapper.removeEventListener('click', removeModal);
+        }
 
     };
 
-    
+};
 
+    }
+});
+     
+ 
+// google Maps ------------https://www.linuxmint.com/starthttp://coldair.dev.cinet.ru/gallery.html/sarah/-----------------------------------------
 
-  //  console.log(href);
-
-
-
-
-
-
-
-var wrapper = document.getElementById('wrapper');
-var button = document.getElementById('button');
-var array = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
-var currentIndex = 0;
-var currentLimit = 5;
-
-function showArray() {
-  currentLimit += currentIndex;
-  for (currentIndex; currentIndex < currentLimit && currentIndex < array.length; currentIndex++) {
-    wrapper.innerHTML += array[currentIndex] + "<br />";
-  };
-}
-
-
-// google Maps -----------------------------------------------------------
+var self;
 
 function initMap() {
     // Styles a map in night mode.
@@ -169,12 +175,16 @@ function initMap() {
        
     });
     setMarkers(map);
-}
-    var offices = [
-        ['komarova', 47.286823, 39.703821, 3],
-        ['dovatora', 47.243000, 39.643042, 2],
-        ['sadovaya', 47.219993, 39.709282, 1]
+    self = this;
+    
+};
+
+var offices = [
+        ['komarova', 47.286823, 39.703821],
+        ['dovatora', 47.243000, 39.643042],
+        ['sadovaya', 47.219993, 39.709282]
       ];
+  
 
 function setMarkers(map) {
         var myMark = {
@@ -190,9 +200,47 @@ function setMarkers(map) {
                 icon: myMark
               });
         }
-    
+
+  
 };
 
+
+$(function(){
+    if($('body').is('.contact-page')){
+var komarova = [47.286823, 39.703821];
+
+
+function goToMarker() {
+
+    var adrLinks = document.querySelectorAll('.map-ico');
+    
+    for (var i = 0; i < adrLinks.length; i++) {
+
+        adrLinks[i].onclick = function () {
+
+           var currentId =  this.getAttribute('id');
+           
+           for (var j = 0; j< offices.length; j++){
+           
+           }
+       
+        }
+    }
+};
+
+/*
+
+function MoveMapTo(lat,lng) { 
+    return function(e) { 
+      self.map.panTo(new google.maps.LatLng(lat,lng)); 
+    }
+   } 
+
+
+   google.maps.event.addDomListener(document.getElementById('sadovaya'), 'click', moveMapTo(47.219993,39.709282));
+   google.maps.event.addDomListener(document.getElementById('dovatora'), 'click', moveMapTo(47.243000,39.643042));
+   google.maps.event.addDomListener(document.getElementById('komarova'), 'click', moveMapTo(47.286823,39.703821));
+*/
 /*
 var myMark = {
     url: "img/svg/icons/map.svg",
@@ -208,3 +256,50 @@ animation: google.maps.Animation.DROP
 });
 
 */
+
+
+
+
+
+// Map how to road
+var adrModalWrapper = document.querySelector('.adr-modal-wrapper');
+var adrMapRoad = document.querySelectorAll('.adr-link');
+
+    for (var i = 0; i < adrMapRoad.length; i++) {
+        adrMapRoad[i].onclick = function(event) {
+            event.preventDefault();
+            adrModalWrapper.classList.toggle('modal-show');
+
+            var currentAdr = this.getAttribute('href');
+            document.querySelector('.img-sklad').setAttribute('src', currentAdr);
+    }
+};
+var closeMarker = document.querySelector('.close');
+    closeMarker.onclick = function(){
+    adrModalWrapper.classList.toggle('modal-show');
+};
+
+
+    }
+});
+
+
+// Page select. Active links.
+
+$(document).ready(function(){
+
+    $('.page-select-link').on('click', function(){
+        $('.page-select-link').removeClass('active-page');
+        $(this).toggleClass('active-page');
+
+
+    });
+
+    $('.arrow-left').on('click', function(){
+        var pageNumbers = $('.page-select-link');
+        for (var i = 0; i < pageNumbers.length; i++) {
+            pageNumbers[i].classList.remove('active-page');
+        }
+    });
+
+});

@@ -99,6 +99,7 @@ hr
 		position: absolute
 		z-index: 1	
 		left: 0	
+		text-align: center
 		&::before
 			content: " "			
 			display: block
@@ -137,6 +138,10 @@ hr
 	border: none
 	background-color: transparent
 	cursor: pointer
+	height: 22px !important
+	position: relative !important
+	right: -20px !important
+	top: -12px !important
 	.ico-close
 		display: block
 		height: 2px
@@ -174,11 +179,66 @@ hr
 .modal-textarea
 	color: $text !important
 
-.file-load
-	border: none !important
-	padding: 10px 0
-	color: #ffffff !important
+label.file
+	input
+		position: absolute
+		width: 0
+		overflow: hidden
+		opacity: 0
+
+label.file
+	width: 100%
+	min-width: 150px
+	height: 40px
+	margin-top: 16px
+	line-height: 28px!important
+	cursor: pointer
+	position: relative
+	display: inline-block
+	white-space: nowrap
+	font-family: sans-serif
+	text-align: right
+
+label.file
+	&::before
+		content: "Файлы не выбраны"
+		display: block
+		position: absolute
+		box-sizing: border-box
+		width: 55%
+		height: inherit
+		background-color: #fff
+		color: #a0b7c5
+		overflow: hidden		
+		font-family: Roboto, sans-serif
+		font-weight: 400
+		font-size: 16px
+		text-align: left
+		padding: 10px 0 0 10px
+		vertical-align: middle
+
+label.file[title]:not([title=""])::before
+	content: attr(title)
+	color: $accent
+
+label.file:after 
+	content: "Загрузить файл"
+	display: inline-block
+	position: relative
+	box-sizing: border-box
+	width: 40%
+	height: inherit
+	padding: 18px 4px 0 4px
+	background-color: $accent
+	color: #fff
+	overflow: hidden
+	font-family: Roboto, sans-serif
+	font-weight: 400
 	font-size: 16px
+	text-align: right
+	vertical-align: middle
+	text-decoration: underline
+
 
 .btn-modal-form
 	width: 100%
@@ -219,6 +279,7 @@ hr
 			color: #fff
 			&::before
 				transform: scaleY(1)
+
 
 
 
@@ -599,51 +660,8 @@ textarea
 	color: #090909
 	padding: 0 10px
 .send-row
-	margin-top: 60px
-	.btn-send
-		width: 386px
-		height: 70px
-		position: relative		
-		#send		
-			display: flex
-			justify-content: center
-			align-items: center
-			width: 100%
-			height: 100%
-			cursor: pointer
-			font-family: Roboto, sans-serif
-			font-size: 25px
-			font-weight: 300
-			color: #fff
-			text-align: center
-			line-height: 1	
-			background-color: #009fe3	
-			border: 1px solid #fff		
-			position: absolute
-			z-index: 1
-			&::before
-				content: " "			
-				display: block
-				width: 100%
-				height: 100%
-				position: absolute
-				z-index: -1
-				top: 0
-				bottom: 0
-				left: 0
-				right: 0
-				background: red
-				transform: scaleY(0)
-				transform-origin: 50%
-				transition-property: transform
-				transition-duration: 0.3s
-				transition-timing-function: ease-out
-			&:hover
-				text-decoration: none
-				color: #fff
-				&::before
-					transform: scaleY(1)
-
+	margin-top: 60px	
+	
 
 
 

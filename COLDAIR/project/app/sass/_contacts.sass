@@ -27,7 +27,7 @@
 
 .map-ico
     width: 28px
-
+    cursor: pointer
 .map-adr
     padding-left: 30px
     width: 100%
@@ -83,3 +83,37 @@
     color: $text
     padding: 0 10px
     border: 1px solid $accent
+
+
+
+.adr-modal-wrapper
+    width: 100vw
+    height: 100vh
+    position: fixed
+    z-index: 1000
+    background-color: rgba(0,0,0,0.6)
+    display: none
+    justify-content: center
+    align-items: center
+
+.modal-show
+    display: flex
+
+.adr-modal
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    padding: 40px 80px 80px 80px
+    background-color: $accent
+    position: relative
+    h1
+        color: #ffffff
+        margin-bottom: 40px
+
+.close
+    display: inline-block
+    width: 24px
+    position: absolute
+    right: 20px
+    top: 20px
+    opacity: 1 !important
