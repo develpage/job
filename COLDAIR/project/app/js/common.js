@@ -80,7 +80,7 @@ $(document).ready(function () {
 $(function(){
     if($('body').is('.gallery-page')){
 
-window.onload = function () {
+
 
     var modalGalleryWrapper = document.querySelector('.gallery-modal-wrapper'),
         galleryModal = document.querySelector('.gallery-modal'),
@@ -97,8 +97,7 @@ window.onload = function () {
         href[i] = images[i].getAttribute('src');
         alt[i] = images[i].getAttribute('alt');
 
-        images[i].onclick = function () {
-            
+        images[i].onclick = function () {            
             modalGalleryWrapper.classList.toggle('modal-show');
             galleryModal.classList.toggle('gallery-modal-show');
             var clickImgAttr = this.getAttribute('src');
@@ -156,10 +155,10 @@ window.onload = function () {
 };
 
     }
-});
+);
      
  
-// google Maps ------------https://www.linuxmint.com/starthttp://coldair.dev.cinet.ru/gallery.html/sarah/-----------------------------------------
+// google Maps 
 
 var self;
 
