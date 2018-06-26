@@ -18,7 +18,7 @@
 
 </head>
 
-<body class="contact-page">
+<body class="contacts-page">
 
 <!-- modal adress -->
 
@@ -28,7 +28,7 @@
 		<span class="close"><img src="img/svg/icons/close.svg" alt=""></span>
 		<h1>Схема проезда</h1>
 		<div class="adr-img-container">
-			<img class="img-sklad" src="" alt="">
+			<img class="img-sklad img-responsive" src="" alt="">
 		</div>
 	</div>
 	
@@ -59,7 +59,7 @@
 	</div>
 	<nav class="container second-page-nav">
 		<div class="row no-gutters">
-			<div class="col-lg-2 col-md-3 col-sm-3 mt-1 d-flex justify-content-start align-items-center">
+			<div class="col-lg-2 col-md-3 col-sm-3 d-flex justify-content-center align-items-center">
 				<a href="index.html" class="logo-in-nav">
 					<img src="img/svg/logo.svg" alt="">
 				</a>
@@ -118,7 +118,7 @@
 	</div>
 
 
-	<section class="container-fluid">
+	<section class="container-fluid p-0">
 		<div class="row no-gutters">
 			<div class="col-12">
 				<div id="map"></div>
@@ -138,7 +138,7 @@
 						<a href="tel:8-928-757-62-02">8 (928) 757-62-02</a>
 					</div>
 				</div>
-				<div class="mail mt-5">
+				<div class="mail mt-5 mb-5">
 					<div class="mail-ico">
 						<img src="img/svg/icons/mail.svg" alt="">
 					</div>
@@ -151,33 +151,33 @@
 			<div class="col-md-6 d-flex flex-column">
 
 				<div class="adr-str mb-5">
-					<div id="sadovaya" class="map-ico">
+					<div class="map-ico">
 						<img src="img/svg/icons/map.svg" alt="">
 					</div>
 					<div class="map-adr">
-						<div class="adr">
+						<div id="sadovaya" class="adr active-coords">
 							<p>г.Ростов-на-Дону, ул. Б.Садовая, 50</p>
 						</div>
 						<a href="img/adress/scheme_sklad.jpg" class="adr-link">схема проезда</a>
 					</div>
 				</div>
 				<div class="adr-str mb-5">
-					<div id="dovatora" class="map-ico">
+					<div class="map-ico">
 						<img src="img/svg/icons/map.svg" alt="">
 					</div>
 					<div class="map-adr">
-						<div class="adr">
+						<div id="dovatora" class="adr">
 							<p>г.Ростов-на-Дону, ул. Доватора, 34</p>
 						</div>
 						<a href="img/adress/scheme_sklad.jpg" class="adr-link">схема проезда</a>
 					</div>
 				</div>
 				<div class="adr-str mb-5">
-					<div id="komarova" class="map-ico">
+					<div class="map-ico">
 						<img src="img/svg/icons/map.svg" alt="">
 					</div>
 					<div class="map-adr">
-						<div class="adr">
+						<div id="komarova" class="adr">
 							<p>г.Ростов-на-Дону, ул. Комарова, 5</p>
 						</div>
 						<a href="img/adress/scheme_sklad.jpg" class="adr-link">схема проезда</a>
@@ -203,25 +203,25 @@
 				<div class="col-12">
 			
 			
-			<form id="feedback-form" action="php/send.php" method="POST"></form>
+			<form id="feedback-form" method="POST"></form>
 				<div class="row">
 					<div class="col-md-4 form-input-block">
 						<label class="feedback-label" for="name">Имя</label>
-						<input class="feedback-input" id="name" type="text" form="feedback-form" required>
+						<input class="feedback-input" id="feedback-name" type="text" form="feedback-form" required>
 					</div>
 					<div class="col-md-4 form-input-block">
 						<label class="feedback-label" for="phone">Телефон</label>
-						<input class="feedback-input" id="phone" type="tel" form="feedback-form" pattern="[0-9]{5,25}" required>
+						<input class="feedback-input" id="feedback-phone" type="tel" form="feedback-form" pattern="[0-9]{5,25}" required>
 					</div>
 					<div class="col-md-4 form-input-block">
 						<label class="feedback-label" for="mail">Email</label>
-						<input class="feedback-input" id="mail" type="email" form="feedback-form" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+						<input class="feedback-input" id="feedback-mail" type="email" form="feedback-form" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-12 form-input-block textarea-block">
 						<label class="feedback-label" for="feedback">Комментарий</label>
-						<textarea class="feedback-textarea" name="feedback" id="feedback" form="feedback-form" cols="30" rows="5" required></textarea>
+						<textarea class="feedback-textarea" name="feedback-text" id="feedback" form="feedback-form" cols="30" rows="5" required></textarea>
 					</div>
 				</div>
 				<div class="row send-row">

@@ -5,29 +5,33 @@
     width: 28px
 
 .phone, .mail
-    display: flex
+    display: flex !important
+    flex-wrap: nowrap !important
+    align-items: flex-start !important
 
 .phone-number, .mail-link
     font-family: Roboto, sans-serif
     font-size: 28px
     font-weight: 300
     padding-left: 30px
+    position: relative
+    top: 0
     a
         text-decoration: none
         color: $text
     
-
 
 .phone-ico, .mail-ico
     position: relative
     top: 6px
 
 .adr-str
-    display: flex
+    display: flex !important
+    flex-wrap: nowrap !important
+    align-items: flex-start !important
 
 .map-ico
     width: 28px
-    cursor: pointer
 .map-adr
     padding-left: 30px
     width: 100%
@@ -39,6 +43,7 @@
         background-color: $accent
         color: #ffffff
         text-align: center
+        cursor: pointer
         p
             margin-bottom: 10px
     .adr-link
