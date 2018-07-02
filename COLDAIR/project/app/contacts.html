@@ -206,28 +206,28 @@
 			<form id="feedback-form" method="POST"></form>
 				<div class="row">
 					<div class="col-md-4 form-input-block">
-						<label class="feedback-label" for="name">Имя</label>
-						<input class="feedback-input" id="feedback-name" type="text" form="feedback-form" required>
+						<label class="feedback-label" for="feedback-name">Имя</label>
+						<input class="feedback-input" id="feedback-name" name="feedback-name" type="text" form="feedback-form" required>
 					</div>
 					<div class="col-md-4 form-input-block">
-						<label class="feedback-label" for="phone">Телефон</label>
-						<input class="feedback-input" id="feedback-phone" type="tel" form="feedback-form" pattern="[0-9]{5,25}" required>
+						<label class="feedback-label" for="feedback-phone">Телефон</label>
+						<input class="feedback-input" id="feedback-phone" name="feedback-phone" type="tel" form="feedback-form" pattern="[0-9]{5,25}" required>
 					</div>
 					<div class="col-md-4 form-input-block">
-						<label class="feedback-label" for="mail">Email</label>
-						<input class="feedback-input" id="feedback-mail" type="email" form="feedback-form" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+						<label class="feedback-label" for="feedback-mail">Email</label>
+						<input class="feedback-input" name="feedback-mail" id="feedback-mail" type="email" form="feedback-form" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-12 form-input-block textarea-block">
-						<label class="feedback-label" for="feedback">Комментарий</label>
-						<textarea class="feedback-textarea" name="feedback-text" id="feedback" form="feedback-form" cols="30" rows="5" required></textarea>
+						<label class="feedback-label" for="feedback-text">Комментарий</label>
+						<textarea class="feedback-textarea" name="feedback-text" id="feedback-text" form="feedback-form" cols="30" rows="5" maxlength="2000" required></textarea>
 					</div>
 				</div>
 				<div class="row send-row">
 					<div class="col-12 d-flex justify-content-center align-items-center">
 						<div class="btn">
-							<button type="submit" id="send">Отправить</button>
+							<button type="submit" id="feedback-send">Отправить</button>
 						</div>
 					</div>
 				</div>
@@ -314,6 +314,7 @@
 
 	<script src="js/scripts.min.js"></script>
 
+	
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCl7_xAOBw4iVvYjc2WQABqu_PdjebNp2k&callback=initMap"
 	    type="text/javascript"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
