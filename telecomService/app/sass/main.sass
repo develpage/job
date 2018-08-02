@@ -1,0 +1,1636 @@
+@import "vars"
+@import "libs"
+
+@keyframes pulsar
+	0%
+		transform: scale(0.5)
+		opacity: 0
+	50%
+		opacity: 1
+	100%
+		transform: scale(1)
+		opacity: 0
+
+@keyframes arrow
+	0%
+		transform: translateY(-5px)
+	50%
+		transform: translateY(5px)
+	100%
+		transform: translateY(0)
+
+@keyframes greenLineSlider
+	0%
+		transform: scaleX(0)
+	100%
+		transform: scaleX(200px)
+
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+html, body
+	height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	margin: 0
+	padding: 0	
+	background-color: #000
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+h1
+	font-family: Roboto, sans-serif
+	font-size: 74px
+	font-weight: 300
+	color: #fff
+	text-transform: uppercase
+
+p
+	font-family: Roboto, sans-serif
+	font-size: 18px
+	font-weight: 300
+	color: #ffffff
+	line-height: 1.4
+b
+	font-family: Roboto, sans-serif
+	font-weight: 700
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.text-center
+	text-align: center
+
+section
+	width: 100%
+	min-height: 100vh
+	margin: 0
+	padding: 0
+
+div
+	margin: 0
+	padding: 0
+
+
+#my-place
+	span
+		text-transform: uppercase
+
+#big-project-gal, #customers-name, #gnb-gal
+	display: none
+#none-name, #big-project-name, #about-name, #services-name, #works-name, #gnb-name, #license-name, #review-name, #contacts-name, #works-name-gal
+	display: none
+
+.display-point
+	display: inline-block !important
+
+// Loader ***********************************************
+
+.loaderArea
+	background: linear-gradient(180deg, #000 10%, #080c12 90%)
+	overflow: hidden
+	position: fixed
+	left: 0
+	top: 0
+	right: 0
+	bottom: 0
+	z-index: 100000
+
+.loader
+	height: 40px
+	width: 40px
+	position: absolute
+	left: 50%
+	margin-left: -20px
+	top: 50%
+	margin-top: -20px
+
+ 
+.loader:before, .loader:after
+	content: ""
+	height: 40px
+	width: 40px
+	border: 4px solid rgba(255,255,255,.5)
+	border-radius: 10px
+	position: absolute
+	top: 0
+
+ 
+.loader:before
+	animation: animate 2s infinite linear;
+
+@keyframes animate
+	0%
+		transform: rotate(0)
+	100%
+		transform: rotate(180deg)
+
+.loader:after
+	animation: animate2 2s infinite linear
+
+@keyframes animate2
+	0%
+		transform: rotate(0)
+	100%
+		transform: rotate(-180deg)
+
+
+
+
+
+
+//fixed background-image ! **************************************
+
+.scroll-bg
+	width: 100vw
+	height: 100vh
+	position: fixed
+	top: 0
+	left: 0
+	display: block
+
+.bg-initial
+	background: url(../img/1bckgrnd-init.jpg) no-repeat center top fixed 
+	background-size: cover
+	z-index: 0
+	opacity: 1
+	transition: all 1s linear
+	&.disNone
+			opacity: 0
+
+.bg1
+	background: url(../img/1bckgrnd.jpg) no-repeat center top fixed 
+	background-size: cover
+	z-index: 1
+	opacity: 1
+	visibility: inherit	 
+	transition: all .5s linear
+	&.fade-out
+			opacity: 0
+			visibility: hidden
+			
+.bg2
+	background: url(../img/2bckgrnd.jpg) no-repeat center top fixed 
+	background-size: cover
+	z-index: 2
+	opacity: 0
+	visibility: inherit
+	transition: all .5s linear
+	&.fade-in
+		opacity: 1 	
+
+.bg3
+	background: url(../img/3bckgrnd.jpg) no-repeat center top fixed 
+	background-size: cover
+	background-position: center
+	z-index: 3
+	//opacity: 0
+	visibility: inherit
+	opacity: 0
+	transition: 0.1s linear
+	&.display
+		opacity: 1
+	&.fade-out
+		opacity: 0
+
+/*.bg4
+	background: url(../img/4bckgrnd.jpg) no-repeat center top fixed 
+	background-size: auto auto
+	height: 50%
+	z-index: 2
+	//opacity: 0
+	visibility: inherit	
+	&.display
+		display: block*/
+
+// My PLace ************************************************************
+
+#my-place
+	position: absolute
+	right: 115px
+	top: 35px
+	color: #ffffff
+	font-family: Roboto, sans-serif
+	font-weight: 300
+	font-size: 16px
+//points for my place on page ******************************************
+
+#point-big-project
+	position: absolute
+	z-index: 2000
+	left: 0
+	top: 1502%
+	width: 20px
+	height: 20px
+	background-color: red
+
+
+//modal Window **********************************************************.
+
+#modal-wrapper
+	position: fixed
+	z-index: 10000
+	width: 100vw
+	height: 100vh
+	background-color: rgba(0,0,0,0.8)
+	display: none
+	justify-content: center
+	align-items: center
+	padding: 30px
+	overflow: hidden
+
+#modal-img
+	overflow: hidden
+	img
+		width: 100%
+		height: auto
+#modal-close
+	width: 30px
+	height: 30px
+	cursor: pointer
+	position: absolute
+	top: 20px
+	right: 40px
+	img
+		width: 30px
+		height: 30px
+
+.in-modal
+	cursor: pointer
+
+#cont1-text, #cont2-text
+	h3
+		font-family: Roboto, sans-serif
+		font-weight: 500
+		font-size: 24px
+		color: #ffffff
+	ul
+		li
+			font-family: Roboto, sans-serif
+			font-size: 18px
+			font-weight: 300
+			color: #ffffff
+
+// HEADER ******************************************************
+.fixed-menu
+	position: fixed
+	z-index: 9999
+	width: 100vw
+	margin: 0
+	padding: 0	
+	opacity: 1
+	top: 0
+	.navigation-panel
+		display: flex
+		justify-content: space-between
+		height: 120px
+		width: 100%
+		padding: 28px 30px 0 30px
+		position: relative
+		z-index: 1100
+		.logo
+			display: inline-block
+			a
+				display: inline-block
+				position: absolute
+				width: 140px
+				height: 50px
+				z-index: 1200		
+			#logoSvg
+				width: 140px
+		.navigation
+			display: flex
+			flex-direction: column
+			align-items: center
+			justify-content: center
+			position: absolute
+			right: 50px
+			width: 36px
+			height: 36px
+			border: 2px solid $accent
+			border-radius: 50%
+			z-index: 1200
+			transition: 0.55s
+			cursor: pointer
+			&.active
+				.middle
+					opacity: 0
+				.top
+					transform: translateY(5px) rotate(-45deg)						
+				.bottom
+					transform: translateY(-5px) rotate(45deg)
+
+			.burger-item
+				display: block
+				position: relative
+				height: 1px
+				width: 18px
+				background-color: #fff
+				transition: 0.4s	
+				&.top
+					top: -4px	
+				&.bottom
+					top: 4px
+			&:hover
+				background-color: $accent
+				.changeColor
+					background-color: #fff
+		
+			&.changeColor
+				border: 2px solid #4e4e4e
+
+	.burger-menu
+		position: absolute
+		display: flex
+		flex-direction: column
+		align-items: center
+		justify-content: space-between
+		background-color: #000
+		top: 0
+		right: -1000px
+		opacity: 1
+		z-index: 1000
+		height: 100vh
+		width: 30%
+		transition: .4s ease-in-out
+		&.visible-menu
+			right: 0
+			opacity: 1
+		.social
+			display: flex
+			justify-content: space-between
+			align-items: center
+			width: 80%
+			margin-bottom: 20px
+			.copyright				
+				p
+					color: #fff
+					font-family: Roboto, sans-serif
+					font-weight: 300
+					font-size: 14px
+			.social-icons
+				.social-link
+					i
+						margin-left: 25px
+						margin-bottom: 20px
+						color: #fff
+						font-size: 20px
+						transition: 0.2s linear
+						&:hover
+							color: $accent
+		.menu
+			list-style-type: none
+			position: relative
+			padding: 0
+			margin-top: calc(50% / 2)
+			.menu-item
+				display: block
+				text-align: center						
+				.menu-link
+					text-decoration: none
+					color: #fff
+					text-transform: uppercase
+					font-family: Roboto, sans-serif
+					font-weight: 300
+					font-size: 26px
+					line-height: 2.5
+					transition: .3s linear
+					padding: 0 20px
+					outline: 1px solid transparent
+					border: 10px solid transparent
+					&:hover
+						color: $accent	
+					&:active
+						color: $accent
+
+.logo-svg
+	position: absolute
+	transition: 0.3s ease
+
+.logo-hide
+	opacity: 0 !important
+.white-logo
+	opacity: 0
+.black-logo
+	opacity: 0
+
+// HEader section ********************************************************************
+
+header
+	width: 100%
+	height: 100vh
+	.header-bgi
+		position: relative
+		z-index: 10
+		height: 100%
+		width: 100%
+		display: flex
+		align-items: center
+		.logo
+			display: none
+			position: absolute
+			top: 20px
+			left: 20px
+			#logoSvgInvert
+				height: 40px
+		.header-content
+			display: flex
+			flex-direction: column
+			justify-content: center
+			align-items: center
+			text-align: center
+			position: relative
+			width: 100%
+			height: 100%
+			transition: 1s linear
+			&.fade-out
+				opacity: 0
+				 			
+			.company-name				
+				color: #fff
+				text-transform: uppercase
+				font-family: Roboto, sans-serif
+				font-weight: 300				
+				font-size: 76px
+				margin-top: 5%
+				span
+					font-family: Roboto, sans-serif 
+					font-weight: 700
+			.company-slog
+				color: $accent
+				text-transform: uppercase
+				font-family: Roboto, sans-serif
+				font-weight: 700 
+				font-size: 27px	
+			.company-objects
+				color: #fff
+				font-family: Roboto, sans-serif
+				font-weight: 300
+				font-size: 25px
+				line-height: 1.4
+				margin-top: 5%
+			.button
+				margin-top: 8%
+				a
+					font-family: Roboto, sans-serif
+					text-decoration: none
+					font-weight: 300
+					color: #fff
+					font-size: 20px
+					text-transform: uppercase
+					border: 2px solid $accent
+					padding: 22px 40px
+					border-radius: 80px
+					transition: .5s	ease
+					&:hover
+						background-color: $accent
+			.arrow-down
+				position: relative
+				margin-top: calc(100%/12)	
+				.dws
+					position: absolute
+				    top: 50%
+				    left: 50%
+					transform: translate(-50%,-50%)
+					.pulse						
+						display: flex
+						justify-content: center
+						align-items: center
+						width: 60px
+						height: 60px
+						text-align: center
+						border: 2px solid $accent
+						border-radius: 50%
+						cursor: pointer
+						transition: .5s ease											    
+						&::before
+							content: ''
+							position: absolute
+							border: 1px solid $accent
+							left: -20px
+							right: -20px
+							top: -20px
+							bottom: -20px
+							border-radius: 50%
+							animation: pulsar 1.4s linear infinite
+						&::after
+							content: ''
+							position: absolute
+							border: 1px solid $accent
+							left: -20px
+							right: -20px
+							top: -20px
+							bottom: -20px
+							border-radius: 50%
+							animation: pulsar 1.4s 0.5s linear infinite
+						&:hover
+							background-color: $accent						
+							#arrowDown
+								animation: arrow 1.2s ease-in-out
+						#arrowDown
+							width: 25%
+						a							
+							position: absolute
+							z-index: 99999							
+							width: 100%
+							height: 100%
+							
+	.header-contacts
+		transition: 1s linear
+		&.fade-out
+			opacity: 0	
+		p
+			position: absolute
+			bottom: 0
+			left: 30px
+			color: #fff
+			font-family: Roboto, sans-serif
+			text-align: left
+			font-weight: 300
+			font-size: 15px	
+			z-index: 10
+		
+						
+
+
+
+
+
+// ABOUT COMPANY **************************************************************
+
+
+.about-section
+	width: 100%
+	display: flex
+	flex-direction: column
+	justify-content: center
+	position: relative
+	z-index: 20
+	transform: translateY(0)
+	transition: all 1s ease
+	&.about-scroll
+		transform: translateY(-400px)
+	.about-company
+		width: 100%
+		margin: 0 auto
+		
+		.about-company-content
+			width: 100%
+			padding: 0 80px
+			display: flex
+			flex-direction: column
+			justify-content: center
+			align-items: center
+			position: relative
+			transition: all 1s linear
+			margin-bottom: 80px
+			&.fade-out
+				opacity: 0
+			h1
+				align-self: flex-start
+				margin-left: 100px
+			span				
+				height: 8px
+				background-color: #ffffff
+				position: absolute
+				z-index: 10
+				transition: all .2s linear
+				&.green-line-right
+					width: calc(100%/5)
+					right: 115px
+					top: 220px					
+				&.green-line-left
+					width: 220px
+					left: 245px
+					bottom: 20px
+			.company-text
+				width: 70%
+				padding: 26px 46px
+				background-color: #4E887C
+				ul
+					color: #ffffff
+					padding-left: 14px
+					li
+						font-size: 16px
+						p
+							color: #ffffff
+							line-height: 1.2
+							margin-bottom: 4px
+
+// Slider section **********************************************
+
+
+.slider-section
+	position: relative
+	z-index: 10
+	.slider-wrapper
+		height: 100%
+		width: 100%
+		position: absolute
+		display: flex
+		flex-wrap: wrap
+		.slider-left
+			width: 50%
+			height: 100%
+			position: relative			
+			.slider-left-content
+				width: 100%
+				height: 100%
+				position: absolute
+				.slider-name-wrapper
+					position: absolute
+					top: 130px
+					left: 180px
+					z-index: 5											
+					.slider-name
+						position: relative
+						transition: all .3s linear
+					.slider-green-line
+						width: 200px
+						height: 8px
+						background-color: $accent
+						position: relative
+						z-index: 10
+						bottom: 0
+						transform-origin: 0 50%
+						&.slider-green-line-animated
+							animation: greenLineSlider .7s ease
+				.slider-nav
+					position: inherit
+					z-index: 10
+					left: 180px
+					bottom: 0
+					width: 50%
+					height: 45%
+					ul
+						list-style-type: none
+						margin: 0
+						padding: 0
+						li	
+							position: relative
+							display: block
+							height: 70px
+							width: 200px
+							margin: 0
+							padding: 0						
+							.link-wrapper
+								width: 100%
+								height: 50%
+								.bullet
+									position: absolute
+									top: 0
+									left: 0
+									width: 9px
+									height: 9px
+									background-color: #fff
+									border-radius: 50%
+								.line
+									position: absolute								
+									height: 100%
+									width: 1px
+									top: 0
+									left: 4px
+									background-color: #fff
+									opacity: .7
+								.ico
+									position: absolute
+									top: -8px
+									left: -8px
+									height: 25px
+									width: 25px
+									border: 2px solid $accent
+									border-radius: 50%
+									opacity: 0
+									transition: all .6s ease
+								.content
+									position: absolute
+									z-index: 10
+									height: 50%
+									top: -12px
+									left: 30px
+									.link-line
+										position: inherit
+										height: 2px
+										width: 100%
+										opacity: 1
+										transform-origin: 0 50%
+										background-color: $accent
+										transition: .4s ease
+										transform: scaleX(0)
+									a
+										text-decoration: none
+										font-family: Roboto, sans-serif
+										font-weight: 300
+										font-size: 20px
+										text-transform: uppercase
+										color: #fff
+										margin: 0
+										padding: 0										
+										transition: all .4s ease
+							&:hover
+								.ico
+									opacity: 1
+								.content
+									.link-line
+										transform: scaleX(1)
+							.active
+								.ico
+									opacity: 1
+								.content
+									.link-line
+										transform: scaleX(1)
+			.slider-bg-left
+				width: 100%
+				height: 100%
+				position: absolute
+
+
+
+		.slider-right
+			height: 100%
+			width: 50%	
+			.slider-top-wrapper
+				width: 100%
+				height: 50%
+				.slider-top
+					position: relative
+					width: 100%
+					height: 100%
+					.slider-bg-top
+						width: 100%
+						height: 100%				
+						position: absolute
+			.slider-content-wrapper
+				width: 100%
+				height: 50%
+				background-color: #4e887c					
+				overflow: hidden
+				position: relative
+				.slider-content
+					display: flex
+					flex-direction: column
+					font-family: Roboto, sans-serif
+					font-weight: 300
+					font-size: 16px
+					position: absolute
+					margin: 40px
+					transition: all .5s linear
+					width: 86%
+					height: 100%
+					background-color: #4e887c
+					overflow: hidden
+					b
+						font-size: 20px
+					ul
+						color: #ffffff
+						padding-left: 14px
+						margin-left: 5px
+						li
+							font-size: 16px
+							margin: 0
+							padding: 0
+							p
+								margin-bottom: 10px
+								line-height: 1.4
+					.button
+						margin-top: 24px
+						align-self: center
+						flex-grow: 1
+						a
+							font-family: Roboto, sans-serif
+							text-decoration: none
+							font-weight: 300
+							color: #ffffff
+							font-size: 18px
+							text-transform: uppercase
+							border: 2px solid #ffffff
+							padding: 14px 60px
+							border-radius: 80px
+							background-color: #376853
+							transition: .5s	ease
+							
+.slider-build
+	opacity: 1
+	&.fade-out
+		opacity: 0
+.slider-project
+	opacity: 0
+	&.fade-in
+		opacity: 1
+.slider-injer
+	opacity: 0
+	&.fade-in
+		opacity: 1
+.slider-service
+	opacity: 0
+	&.fade-in
+		opacity: 1
+
+
+.cont1
+	z-index: 10
+	opacity: 1
+	visibility: inherit	
+	&.fade-out
+		opacity: 0
+		z-index: 1
+		
+.cont2
+	z-index: 2
+	opacity: 0
+	visibility: inherit	
+	&.fade-in
+		opacity: 1
+		z-index: 11
+		
+.cont3
+	z-index: 3
+	opacity: 0
+	visibility: inherit
+	&.fade-in
+		opacity: 1
+		z-index: 12
+		
+.cont4
+	z-index: 4
+	opacity: 0
+	visibility: inherit	
+	&.fade-in
+		opacity: 1
+		z-index: 13
+		
+
+.s-bg1
+	background: url(../img/slider/1stroy_1.jpg) no-repeat center top 
+	background-size: cover	
+	z-index: 1
+	opacity: 1				
+	visibility: inherit
+	transition: all 1s linear
+.s-bg2
+	background: url(../img/slider/2proektir_1.jpg) no-repeat center top fixed 
+	background-size: cover	
+	z-index: 2	
+	opacity: 1				
+	visibility: inherit
+	//display: none
+.s-bg3
+	background: url(../img/slider/3engineering_1.jpg) no-repeat center top fixed 
+	background-size: cover
+	z-index: 3
+	opacity: 1				
+	visibility: inherit
+	//display: none
+.s-bg4
+	background: url(../img/slider/4service_1.jpg) no-repeat center top fixed 
+	background-size: cover	
+	z-index: 4
+	opacity: 1				
+	visibility: inherit
+	//display: none
+
+.st-bg1
+	background: url(../img/slider/1stroy_2.jpg) no-repeat center center 
+	background-size: cover	
+	z-index: 1
+	opacity: 1				
+	visibility: inherit
+
+.st-bg2
+	background: url(../img/slider/2proektir_2.jpg) no-repeat center center 
+	background-size: cover	
+	z-index: 2
+	opacity: 1				
+	visibility: inherit
+	//display: none
+
+.st-bg3
+	background: url(../img/slider/3engineering_2.jpg) no-repeat center center 
+	background-size: cover	
+	z-index: 3
+	opacity: 1				
+	visibility: inherit
+	//display: none
+
+.st-bg4
+	background: url(../img/slider/4service_2.jpg) no-repeat center center 
+	background-size: cover	
+	z-index: 4
+	opacity: 1				
+	visibility: inherit
+	//display: none
+
+
+
+// Short Services ************************************************************
+
+.short-services
+	background-image: url(../img/3bckgrnd.jpg)
+	background-position: center
+	background-repeat: no-repeat
+	background-size: cover
+
+.short-services-left
+	display: flex
+	flex-direction: column
+	justify-content: center
+	align-items: center
+	position: relative
+	width: 50%
+	height: 100vh
+	background-color: #4e887c	
+	top: 0px
+	left: 0px
+	z-index: 5
+	margin: 0
+	padding: 0
+	.short-services-content
+		position: absolute
+		width: 70%
+		margin: 0
+		padding: 0
+		&.right
+			opacity: 1
+			transition: .3s linear
+			p				
+				margin: 40px 0 20px 0
+
+			ul
+				list-style-type: decimal
+				
+				p
+					margin-bottom: 10px
+			&.fade-in
+				opacity: 1				
+		&.left
+			opacity: 1
+			transition: .3s linear
+			&.fade-out
+					opacity: 0
+		h1
+			color: #ffffff
+			line-height: 1
+			margin: 0
+			padding: 0
+			margin-bottom: 24px
+		.short-services-green-line
+			width: 200px
+			height: 8px
+			background-color: #ffffff
+			z-index: 20
+			left: 0
+			
+		ul
+			margin-top: 40px
+			color: #ffffff
+			padding-left: 14px				
+			li
+				font-size: 16px
+				p
+					margin-bottom: 10px
+					line-height: 1.4
+
+
+.short-services-right
+	display: flex
+	flex-direction: column
+	justify-content: center
+	align-items: center
+	position: relative
+	width: 50%
+	height: 100vh
+	background-color: #4e887c
+	float: right
+	z-index: 5
+	margin: 0
+	padding: 0
+	.short-services-content
+		position: absolute
+		width: 70%
+		margin: 0
+		padding: 0
+		&.right
+			opacity: 1
+			transition: .3s linear
+			p				
+				margin: 40px 0 20px 0
+
+			ul
+				list-style-type: decimal
+				
+				p
+					margin-bottom: 10px
+			
+		h1
+			color: #ffffff
+			line-height: 1
+			margin: 0
+			padding: 0
+			margin-bottom: 24px
+		.short-services-green-line
+			width: 200px
+			height: 8px
+			background-color: #ffffff
+			z-index: 20
+			left: 0
+			
+		ul
+			margin-top: 40px
+			color: #ffffff
+			padding-left: 14px				
+			li
+				font-size: 16px
+				p
+					margin-bottom: 10px
+					line-height: 1.4
+
+// Short Services Mobile version************************************************************
+
+.short-services-mobile
+	display: none
+	flex-direction: column
+	justify-content: center
+	align-items: center
+	width: 100%
+	height: auto !important
+	background-color: #fff		
+	z-index: 3
+	margin: 0
+	padding: 0
+	.short-services-mobile-img
+		width: 100%
+		height: auto
+	.short-services-content-mobile
+		width: 90%
+		margin: 40px 0 40px 0
+		padding: 0
+		&.down
+			p				
+				margin: 40px 0 20px 0
+				font-size: 14px
+				color: #000000
+			ul
+				list-style-type: decimal
+				p
+					margin-bottom: 10px
+					font-size: 14px				
+		&.up
+			ul
+				li
+					p
+						font-size: 14px
+						color: #000000
+
+
+
+		h1
+			color: #000
+			line-height: 1
+			margin: 0
+			padding: 0
+			margin-bottom: 24px
+		.short-services-green-line
+			width: 200px
+			height: 8px
+			background-color: $accent
+			z-index: 20
+			left: 0
+			
+		ul
+			margin-top: 40px
+			color: $accent
+			padding-left: 14px				
+			li
+				
+				p
+					margin-bottom: 10px
+					line-height: 1.4
+.create-prod
+	font-family: Roboto, sans-serif
+	font-weight: 700
+	font-size: 20px
+// achievements section *********************************************
+
+
+.achievements-section
+	position: relative
+	overflow: hidden
+	width: 100%
+	min-height: 700px
+	background-color: #000
+	z-index: 5
+	.achievements-bg
+		background: url(../img/4bckgrnd.jpg) no-repeat
+		background-position: center center
+		background-size: cover
+		height: 130%
+		width: 100%
+		position: absolute
+		top: 0
+		left: 0	
+		z-index: 3
+		visibility: inherit	
+		background-color: #000
+	.achievements-content
+		position: relative
+		margin-left: calc(100%/9)
+		z-index: 6
+		top: 0
+		width: 80%
+		.achievements-content-name-wrapper
+			margin-top: calc(100%/10)
+			h1
+			.achievements-green-line
+				width: 200px
+				height: 8px
+				background-color: $accent
+		.achievements-content-top
+			width: 100%
+			margin-top: calc(100%/16)
+
+			p
+				font-family: Roboto, sans-serif
+				font-weight: 300
+				font-size: 16px
+				color: #fff
+		.achievements-content-bottom
+			width: 40%
+			.achievements-green-line-b1
+				width: 150px
+				height: 8px
+				background-color: $accent
+				position: absolute
+				z-index: 20
+				bottom: 6px
+				left: -180px
+				transform-origin: 100% 50%
+			.achievements-green-line-b2
+				width: 100px
+				height: 8px
+				background-color: $accent
+				position: absolute
+				z-index: 20
+				bottom: 20px
+				left: 560px
+			p
+				font-family: Roboto, sans-serif
+				font-weight: 300
+				font-size: 16px
+				color: #fff
+
+// Gallery ***************************************************************************************
+
+.gallery
+	background-color: $green
+	width: 100%
+	.gallery-images
+		height: auto
+		width: 100%
+		position: relative
+		z-index: 5		
+		background-color: $green
+		margin: 0 auto
+		column-count: 3
+		column-gap: 0
+		.gallery-img
+			width: 100%
+			img
+				width: 100%
+				margin-top: 0 !important
+
+// Mobile Gallery ****************************************************************
+
+
+.gallery-mobile
+	display: none
+	position: relative
+	z-index: 10
+	width: 100%
+	.gallery-mobile-wrapper
+		width: 100%
+		min-height: 100vh
+		display: flex
+		flex-wrap: wrap
+		.gallery-mobile-img
+			width: 50%
+			min-height: 20%
+
+
+
+.gmi1
+	background-image: url(../img/gal/1.jpg)
+	background-position: center center
+	background-size: cover
+	
+.gmi2
+	background-image: url(../img/gal/2.jpg)
+	background-position: center center
+	background-size: cover
+.gmi3
+	background-image: url(../img/gal/3.jpg)
+	background-position: center center
+	background-size: cover
+
+.gmi4
+	background-image: url(../img/gal/13.jpg)
+	background-position: center center
+	background-size: cover
+
+.gmi5
+	background-image: url(../img/gal/4.jpg)
+	background-position: center center
+	background-size: cover
+.gmi6
+	background-image: url(../img/gal/12.jpg)
+	background-position: center center
+	background-size: cover
+.gmi7
+	background-image: url(../img/gal/8.jpg)
+	background-position: center center
+	background-size: cover
+.gmi8
+	background-image: url(../img/gal/5.jpg)
+	background-position: center center
+	background-size: cover
+.gmi9
+	background-image: url(../img/gal/9.jpg)
+	background-position: center center
+	background-size: cover
+.gmi10
+	background-image: url(../img/gal/6.jpg)
+	background-position: center center
+	background-size: cover
+.gmi11
+	background-image: url(../img/gal/11.jpg)
+	background-position: center center
+	background-size: cover
+.gmi12
+	background-image: url(../img/gal/7.jpg)
+	background-position: center center
+	background-size: cover
+
+// Big projects **************************************************************
+
+.big-projects
+	min-height: 90vh
+	background-image: url(../img/big_progect_bg.jpg)
+	background-repeat: no-repeat
+	background-position: center
+	background-size: 120%
+	margin-bottom: -40px
+	padding-bottom: 100px
+.big-projects-caption
+	position: relative
+	z-index: 10
+	margin-left: calc(100%/9)
+	padding-top: 8%
+	h1
+		transition: all .3s linear
+	.green-line-big-projects
+		width: 200px
+		height: 8px
+		background-color: $green
+		position: relative
+		z-index: 10
+		transform-origin: 0 50%
+.big-projects-content
+	width: 78%
+	margin: 40px auto
+	ul
+		color: #ffffff
+
+// Gallery Big Projects ***************************************************************************************
+
+.big-project-gallery
+	//background-color: $green
+	background-image: url(../img/galBig/big4.jpg)
+	width: 100%
+	.big-project-gallery-images
+		height: auto
+		width: 100%
+		position: relative
+		z-index: 5
+		margin: 0 auto
+		column-count: 2
+		column-gap: 0
+		column-fill: balance
+		.big-project-img
+			width: 100%
+			overflow: hidden
+			img
+				width: 100%
+				height: auto
+				margin-top: 0 !important
+
+// GNB ****************************************************************************
+
+.gnb
+	min-height: 90vh
+	background-image: url(../img/gnb.jpg)
+	background-repeat: no-repeat
+	background-position: center
+	background-size: 120%
+	margin-bottom: -40px
+.gnb-caption
+	position: relative
+	z-index: 10
+	margin-left: calc(100%/9)
+	padding-top: 8%
+	h1
+		transition: all .3s linear
+	.green-line-gnb
+		width: 200px
+		height: 8px
+		background-color: $green
+		position: relative
+		z-index: 10
+		transform-origin: 0 50%
+.gnb-content
+	width: 78%
+	margin: 40px auto
+	ul
+		color: #ffffff
+
+
+// Gallery GNB ***************************************************************************************
+
+.gnb-gallery
+	background-color: $green
+	width: 100%
+	.gnb-gallery-images
+		height: auto
+		width: 100%
+		position: relative
+		z-index: 5
+		margin: 0 auto
+		column-count: 2
+		column-gap: 0
+		.gnb-img
+			width: 100%
+			img
+				width: 100%
+				margin-top: 0 !important
+
+// License ****************************************************************
+
+.license-section
+	background-color: $green
+	min-height: 100vh
+	position: relative
+	z-index: 450
+	padding-bottom: 100px
+
+.license-caption
+	position: relative
+	z-index: 10
+	margin-left: calc(100%/9)
+	padding-top: 6%
+	margin-bottom: 60px
+	h1
+		transition: all .3s linear
+	.green-line-license
+		width: 200px
+		height: 8px
+		background-color: #ffffff
+		position: relative
+		z-index: 10
+		transform-origin: 0 50%
+	
+.swiper-container
+	width: 80%
+	height: 100%
+	margin: 0 auto
+	.swiper-slide
+		background-color: $green
+		margin-right: 30px
+		img
+			width: 100%
+			cursor: pointer
+
+
+// Customers **************************************************************
+
+.customers-section
+	.customers-wrapper
+		width: 100%
+		min-height: 100vh
+		position: relative
+		overflow: hidden
+		.customers-bg
+			background: url(../img/5bckgrnd.jpg) no-repeat
+			background-position: center center
+			background-size: cover
+			width: 100%
+			height: 120%
+			position: absolute
+			top: 0
+			left: 0
+			overflow: hidden
+		.customers-name-wrapper
+			position: relative
+			z-index: 10
+			margin-left: calc(100%/9)
+			margin-top: calc(100%/14)
+			h1
+				transition: all .3s linear
+			.green-line-customers
+				width: 200px
+				height: 8px
+				background-color: $accent
+				position: relative
+				z-index: 10
+				transform-origin: 0 50%
+		.customers-img-wrapper
+			display: flex
+			flex-direction: column
+			justify-content: flex-start
+			position: relative			
+			z-index: 10
+			width: 100%
+			height: 100%
+			right: 0
+			bottom: 0			
+			.customers-img-line
+				display: flex
+				justify-content: flex-end
+				margin-bottom: 20px
+				.empty
+					opacity: 0
+					max-width: 250px
+					min-width: 150px
+					margin-left: 4px
+				.customers-img
+					max-width: 250px
+					min-width: 150px
+					margin-left: 4px
+		.customers-img-mobile-wrapper
+			display: none
+			width: 100%
+			flex-wrap: wrap
+			justify-content: center
+			position: relative			
+			z-index: 10
+			.customers-mobile-img
+				width: 32%
+				height: auto
+				margin: 2px		
+
+
+
+// Reviews section **************************************************
+
+.reviews-section
+	background-color: $green
+	min-height: 100vh
+	position: relative
+	z-index: 10
+	padding-bottom: 100px
+	.reviews-wrapper
+		height: 100%
+		width: 100%
+		padding-top: 50px
+		.reviews-caption
+			height: 100%
+			margin-left: calc(100%/9)
+			margin-bottom: 60px
+			h1
+				color: #ffffff
+				transition: all .3s linear
+			.green-line-reviews
+				width: 200px
+				height: 8px
+				background-color: #ffffff
+				transform-origin: 0 50%
+
+
+// footerrrr ********************************************************************
+
+footer
+	width: 100%
+	min-height: 85vh
+	display: flex
+	align-items: flex-end
+	position: relative
+	z-index: 10
+	.contacts-wrapper
+		display: flex
+		flex-direction: column
+		width: 100%
+		.contacts-caption
+			margin-left: calc(100%/9)
+			margin-top: 50px
+			h1
+				transition: all .3s linear
+			.green-line-contacts
+				width: 200px
+				height: 8px
+				background-color: $accent
+				transform-origin: 0 50%
+		.contacts-info
+			display: flex
+			width: 100%
+			margin-top: 40px
+			.contacts-map
+				width: 70%
+				height: 350px
+			.contacts-adress-discription
+				display: flex
+				flex-direction: column
+				justify-content: space-between
+				margin: 0 30px
+				width: 30%
+				height: auto
+				.contacts-adress
+					display: flex
+					justify-content: flex-start
+					align-items: flex-start
+					min-width: 50%
+					margin: 1px
+					.ico
+						width: 30px
+						height: 30px
+						margin-right: 10px
+						position: relative
+						top: 6px
+					p
+						font-family: Roboto, sans-serif
+						font-size: 20px
+						font-weight: 300
+						color: #fff
+						margin-bottom: 0
+						padding: 0
+						&:nth-child(1)
+							margin-top: 0
+					&.phone
+						p
+							a
+								color: #fff
+								text-decoration: none
+								&:hover
+									color: $accent
+					&.mail
+						a
+							text-decoration: none
+							font-family: Roboto, sans-serif
+							font-size: 20px
+							font-weight: 300
+							color: #fff
+							padding: 0
+							margin: 0
+							transition: .5s ease
+							&:hover
+								color: $accent
+
+		.copyright
+			margin-left: calc(100%/9)
+			margin-top: 40px
+			margin-bottom: 30px
+			p
+				color: #fff
+				font-family: Roboto,sans-serif
+				font-weight: 300
+				font-size: 20px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import "media" // Always at the end

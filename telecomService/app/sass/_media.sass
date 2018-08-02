@@ -1,0 +1,615 @@
+@import "vars"
+
+
+//@media screen and (orientation:landscape) and (max-device-width: 900px)
+//	html
+//		transform: rotate(-90deg)
+//		transform-origin: left top
+//		position: absolute
+//		top: 100%
+//		left: 0
+
+@media screen and (min-color-index: 0), (-webkit-min-device-pixel-ratio: 0) 
+		.short-services
+			.short-services-content
+				top: 25%
+				left: 15%
+		.achievements-section
+			.achievements-content
+				.achievements-content-bottom
+					.achievements-green-line-b2
+						display: none
+
+
+
+
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+	.short-services-content
+		top: 25%
+		left: 15%
+	.slider-section
+		.slider-wrapper
+			.slider-right
+				.slider-content-wrapper
+					.slider-content
+						.button
+							margin-top: 0
+
+
+@supports (-ms-ime-align:auto)
+	header
+		.header-bgi
+			.header-content
+				.company-name
+					margin-top: 15%
+				.arrow-down
+					margin-top: 18%
+	.slider-section
+		.slider-wrapper
+			.slider-right
+				.slider-content-wrapper
+					.slider-content
+						.button
+							margin-top: 0
+
+/*==========  Desktop First  ==========*/
+
+
+//Extra large: ≥1280px
++media-breakpoint-down(xl)
+
+//Large: ≥992px
++media-breakpoint-down(lg)
+	.fixed-menu
+		.navigation-panel
+			.logo
+				#logoSvg
+					height: 60%
+
+		.burger-menu
+			width: 40%
+
+	h1
+		font-size: 56px
+	header
+		.header-bgi
+			.header-content
+				.company-slog
+					font-size: 24px
+				.company-objects
+					font-size: 16px
+				.arrow-down
+					margin-top: 12%
+	.about-section
+		.about-company
+			.about-company-content
+				.company-text
+					width: 76%
+
+	.slider-section
+		.slider-wrapper
+			.slider-right
+				.slider-top-wrapper
+					height: 30%
+				.slider-content-wrapper
+					height: 70%
+					.slider-content
+						margin: 20px
+						p, ul
+							font-size: 16px	
+
+	.achievements-section
+		.achievements-content
+			width: 71.5%
+			margin-left: calc(100%/6.5)
+			.achievements-content-bottom
+				.achievements-green-line-b2
+					display: none
+	
+	.customers-section
+		.customers-wrapper
+			.customers-name-wrapper
+				margin-left: calc(100%/6)
+
+	.reviews-section
+		.reviews-wrapper
+			padding-bottom: 10px
+			.reviews-caption
+		.reviews
+
+	footer
+		min-height: calc(100vh - 13%)
+		.contacts-wrapper
+			.contacts-caption
+			.contacts-info
+				.contacts-map
+					height: 290px
+				.contacts-adress-discription
+					.contacts-adress
+						&.mail
+							a
+								font-size: 16px
+						p
+							font-size: 16px
+			.copyright
+				margin-top: 20px
+				margin-bottom: 10px
+						
+
+//Medium: ≥768px
++media-breakpoint-down(md)
+	.big-projects-caption
+		h1
+			line-height: 1
+	.gnb-caption
+		h1
+			line-height: 1
+	h1
+		font-size: 46px
+	.fixed-menu
+		.burger-menu
+			width: 100%
+	header
+		.header-bgi
+			.header-content
+				.company-name
+					font-size: 58px
+				.company-slog
+					font-size: 20px
+				.company-objects
+					font-size: 16px
+	.about-section
+		.about-company
+			.about-company-content
+				h1
+					margin-left: 0
+				.company-text
+					p
+						font-size: 14px
+
+	.slider-section
+		.slider-wrapper
+			.slider-right
+				.slider-top-wrapper
+				.slider-content-wrapper
+					padding: 0
+					.slider-content
+						margin: 10px
+						p, ul
+							font-size: 14px
+						.button
+							margin: 0
+			.slider-left
+				.slider-left-content
+					.slider-name-wrapper
+						left: 80px
+					.slider-nav
+						left: 80px
+					
+
+	.short-services
+		.short-services-content
+			width: 80%
+			left: 10%
+			top: 10%
+			.short-services-green-line
+				top: 200px
+			ul
+				li
+					p
+						font-size: 14px
+
+	.achievements-section
+		.achievements-content
+			h1
+				line-height: 1
+			.achievements-content-top
+				p
+					font-size: 14px
+			.achievements-content-bottom
+				p
+					font-size: 14px
+
+
+
+
+	footer
+		.contacts-wrapper
+			.contacts-info
+				.contacts-adress-discription
+					p
+						font-size: 16px	
+
+//Small: ≥576px
++media-breakpoint-down(sm)
+	
+	.fixed-menu
+		.burger-menu
+			.menu
+				.menu-item
+					.menu-link
+						font-size: 20px
+
+
+	#my-place
+		display: none
+	.fixed-menu
+		.burger-menu
+			.menu
+				margin-top: calc(50% / 3)
+
+		.navigation-panel
+			.logo
+				display: none
+				
+	header
+		.header-bgi
+			.header-content
+				.company-name
+					font-size: 36px
+				.company-slog
+					font-size: 16px
+				.company-objects
+					font-size: 14px
+				.button
+					a
+						font-size: 16px
+						padding: 20px 36px
+		.header-contacts
+			display: none	
+
+	.about-section
+			.about-company
+				.about-company-content
+					padding: 20px
+					span
+						display: none
+					.company-text
+						width: 100%
+						padding: 26px 26px
+
+	.slider-section
+		.slider-wrapper
+			.slider-left
+				.slider-left-content
+					.slider-nav
+						left: 40px
+					.slider-name-wrapper
+						left: 40px
+			.slider-right
+				.slider-content-wrapper
+					.slider-content
+						p
+							b
+								color: #ffffff
+								font-size: 20px
+							
+						.button
+							a
+								font-size: 16px
+								padding: 12px 50px
+
+	.short-services
+		.short-services-content
+			width: 90%
+			h1
+				font-size: 40px
+				margin-bottom: 50px
+			.short-services-green-line
+				top: 150px
+	
+	.achievements-section
+		.achievements-content-name-wrapper
+			h1
+				font-size: 38px
+		.achievements-content
+			.achievements-content-top
+				
+
+	.big-projects-caption, .gnb-caption
+		margin: 0 20px
+		padding: 60px 0 40px 0
+	.big-projects-content, .gnb-content
+		width: 90%
+		margin: 0 20px
+		padding-bottom: 60px
+
+
+	.gnb-gallery
+		.gnb-gallery-images
+			column-count: 1
+	
+	.customers-section
+		.customers-wrapper
+			margin-top: 20px
+			.customers-name-wrapper
+				margin: 0
+				display: flex
+				flex-direction: column
+				justify-content: center
+				margin-left: 20px
+				h1
+					top: 0
+					left: 0
+					margin-top: 40px
+				.green-line-customers
+			.customers-img-wrapper
+				display: none
+			.customers-img-mobile-wrapper
+				margin-top: 40px
+				display: flex
+				align-self: flex
+
+	footer
+		min-height: calc(100% + 20%)
+		.contacts-wrapper
+			.contacts-caption
+				margin-left: 20px
+				h1
+					margin-top: 20px
+
+			.contacts-info
+				flex-direction: column-reverse
+				align-items: center
+				justify-content: space-between
+				.contacts-map
+					width: 100%
+					height: 300px
+					margin-top: 40px
+				.contacts-adress-discription
+					margin-right: 10px
+					width: 100%
+					display: flex
+					flex-direction: column
+					justify-content: center
+					align-items: center
+					.contacts-adress
+						margin-top: 20px
+						.ico
+							margin-right: 20px
+						p
+							font-size: 18px
+		.copyright
+			width: 100%
+			text-align: center
+			margin-left: 0
+				
+
+			
+//Extra small: >356
++media-breakpoint-down(xs)
+	body
+		width: 100vw
+		overflow-x: hidden
+	p
+		font-size: 14px
+	ul
+		li
+			font-size: 14px
+	.big-projects-wrapper
+		padding-bottom: 40px
+	.big-projects
+		background-size: cover
+	.big-project-gallery
+		.big-project-gallery-images
+			column-count: 1
+	#gnb
+		background-size: cover
+	.gnb-wrapper
+		padding-bottom: 40px
+
+	.fixed-menu
+		.navigation-panel
+			.navigation
+				right: 20px
+				top: 20px	
+		.burger-menu
+			.social
+				.social-icons
+					.social-link
+						i
+							margin-left: 20px
+	
+
+	header
+		.header-bgi
+			.logo
+				display: block
+			.header-content
+				.company-name
+					margin-top: 20%
+				.button
+					margin-top: 10%
+					a
+						padding: 16px 30px
+						font-size: 14px
+				.arrow-down
+					margin-top: 22%
+					.dws
+						.pulse
+							width: 40px
+							height: 40px
+
+
+	.about-section
+		.about-company
+			.about-company-content
+				padding: 0 10px
+				.company-text
+					padding: 10px	10px
+
+
+	.scroll-bg
+		&.bg3
+			display: none
+	h1
+		font-size: 36px
+	.slider-section
+		.slider-wrapper
+			.slider-right
+				width: 100%
+				.slider-top-wrapper
+					height: 20%
+				.slider-content-wrapper
+					height: 80%
+					.slider-content
+						margin-top: 10px
+						margin-left: 0
+						padding: 25px 10px 0 10px
+						width: 100%
+						b
+							color: $accent
+						ul
+							li
+								p
+									line-height: 1.2
+			.slider-left
+				display: none
+
+	.short-services
+		display: none
+	.short-services-mobile
+		display: flex
+	
+	.achievements-section
+		.achievements-content
+			margin-left: 20px
+			width: 90%
+			.achievements-content-name-wrapper
+				margin-top: calc(100%/3)
+			.achievements-content-bottom
+				width: 100%
+	
+
+	.gallery
+		display: none
+	
+	.gallery-mobile
+		display: block 
+
+	.big-projects-content
+		ul
+			padding: 0 10px
+			li
+				line-height: 1.4
+				margin: 6px 0
+
+	.customers-section
+		margin-top: -20px
+		.customers-wrapper
+			.customers-name-wrapper
+				h1
+					margin-top: 50px
+			.customers-img-mobile-wrapper
+				margin: 40px 0
+				.customers-mobile-img
+					width: 48%
+
+	.reviews-section
+		padding: 40px 0
+		.reviews-wrapper
+			margin: 0px
+			width: 100%
+			padding-top: 20px
+			.reviews-caption
+				display: flex
+				flex-direction: column
+				justify-content: center
+				padding: 10px 0 40px 0
+				margin-left: 20px
+			.reviews
+				margin: 0
+				display: flex
+				flex-direction: column
+				align-items: center
+				padding: 0
+				.reviews-col
+					width: 90%
+					margin-top: 20px
+					p
+						font-size: 14px
+
+
+	footer
+		min-height: 50vh
+		.contacts-wrapper
+			.contacts-info
+				flex-direction: column-reverse
+				align-items: center
+				justify-content: space-between
+				.contacts-map
+					height: 200px
+				.contacts-adress-discription
+					display: block
+					.contacts-adress
+						width: 90%
+						p
+							font-size: 14px
+						.ico
+							width: 20px
+							height: 20px
+							top: 0
+
+			.copyright
+				margin-left: 0	
+				p
+					font-size: 14px		
+
+			
+//Extra small: >0
++media-breakpoint-down(xxs)
+	.fixed-menu
+		.navigation-panel
+			.navigation
+				right: 10px
+				top: 10px
+	
+	.fixed-menu
+		.burger-menu
+			.burger-menu
+				.social
+					margin: 0
+			.menu
+				.menu-item
+					.menu-link
+						font-size: 20px		
+
+	.slider-section
+		.slider-wrapper
+			.slider-right
+				width: 100%
+				.slider-top-wrapper
+					display: none
+				.slider-content-wrapper
+					height: 100%
+					.slider-content
+						ul
+							margin-bottom: 0
+						.button
+							a
+								padding: 10px 40px
+								font-size: 14px
+	
+
+
+				
+
+/*==========  Mobile First  ==========*/
+
+//Extra small: <576px
++media-breakpoint-up(xs)
+
+//Small: ≤576px
++media-breakpoint-up(sm)
+
+//Medium: ≤768px
++media-breakpoint-up(md)
+
+//Large: ≤992px
++media-breakpoint-up(lg)
+
+//Extra large: ≤1280px
++media-breakpoint-up(xl)
+
+
